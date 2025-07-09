@@ -32,6 +32,35 @@ Body
     font-family: var(--ngp-font-slab-serif);
   }
 
+  h1, .h1 {
+    font-size: var(--ngp-font-size-h1);
+  }
+
+  h2, .h2 {
+    font-size: var(--ngp-font-size-h2);
+  }
+
+  h3, .h3 {
+    font-size: var(--ngp-font-size-h3);
+  }
+
+  @media screen and (min-width: 1200px) {
+
+      h1, .h1 {
+        font-size: var(--ngp-font-size-h1);
+      }
+
+      h2, .h2 {
+        font-size: var(--ngp-font-size-h2);
+      }
+
+      h3, .h3 {
+        font-size: var(--ngp-font-size-h3);
+      }
+  }
+
+
+
 /*/////////////
 Header
 /////////////*/
@@ -314,7 +343,19 @@ Header
   }
 
 
+/*/////////////
+Main
+/////////////*/
 
+main {
+  > div:first-child {
+  padding-top: 3rem;
+
+    .breadcrumbs {
+      margin-top: 3.5rem;
+    }
+  }
+}
 
 
 

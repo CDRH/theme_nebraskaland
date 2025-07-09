@@ -20,9 +20,38 @@ because Omeka S base uses it */
   .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: var(--ngp-font-slab-serif);
   }
+  h1, .h1 {
+    font-size: var(--ngp-font-size-h1);
+  }
+  h2, .h2 {
+    font-size: var(--ngp-font-size-h2);
+  }
+  h3, .h3 {
+    font-size: var(--ngp-font-size-h3);
+  }
   /*/////////////
   Header
   /////////////*/
+  /* md */
+  /*/////////////
+  // Navbars
+  /////////////*/
+  /*/////////////
+  Main
+  /////////////*/
+}
+@media screen and (min-width: 1200px) {
+  h1, .h1 {
+    font-size: var(--ngp-font-size-h1);
+  }
+  h2, .h2 {
+    font-size: var(--ngp-font-size-h2);
+  }
+  h3, .h3 {
+    font-size: var(--ngp-font-size-h3);
+  }
+}
+@media screen {
   .banner {
     background-position: center;
     background-size: cover;
@@ -87,10 +116,6 @@ because Omeka S base uses it */
     text-transform: uppercase;
     z-index: 200;
   }
-  /* md */
-  /*/////////////
-  // Navbars
-  /////////////*/
 }
 @media screen and (min-width: 768px) {
   .banner {
@@ -213,6 +238,12 @@ because Omeka S base uses it */
   main .sub-menu {
     display: none;
   }
+  main > div:first-child {
+    padding-top: 3rem;
+  }
+  main > div:first-child .breadcrumbs {
+    margin-top: 3.5rem;
+  }
 }
 :root {
   --ngp-brown: #504a4b;
@@ -225,6 +256,9 @@ because Omeka S base uses it */
   --ngp-light-gray: #ceccd2;
   --ngp-font-subtitle: "open-sans", "Open Sans", Arial, sans-serif;
   --ngp-font-slab-serif: "cordale", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --ngp-font-size-h1: 4.1rem;
+  --ngp-font-size-h2: 3.4rem;
+  --ngp-font-size-h3: 2.8rem;
   --bs-font-sans-serif: "ff-dagny-web-pro", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-serif: Georgia, "Times New Roman", Times, serif;
   --bs-body-font-family: var(--bs-font-serif);
