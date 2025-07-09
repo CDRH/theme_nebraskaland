@@ -1,0 +1,82 @@
+<?php
+$url_1 = $this->themeSetting('menu_link_1');
+$url_2 = $this->themeSetting('menu_link_2');
+$url_3 = $this->themeSetting('menu_link_3');
+$url_4 = $this->themeSetting('menu_link_4');
+$url_5 = $this->themeSetting('menu_link_5');
+
+$url_1_text = $this->themeSetting('menu_link_1_text');
+$url_2_text = $this->themeSetting('menu_link_2_text');
+$url_3_text = $this->themeSetting('menu_link_3_text');
+$url_4_text = $this->themeSetting('menu_link_4_text');
+$url_5_text = $this->themeSetting('menu_link_5_text');
+
+?>
+<div class="top-menu">
+  <nav class="navbar navbar-expand bg-dark m-0 p-0" aria-label="Current Issues at Nebraska Game and Parks">
+    <div class="container">
+      <ul class="navbar-nav gap-2 justify-content-center w-100">
+          <?php if ($url_1): ?>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo $url_1; ?>">
+                <?php if ($url_1_text): ?>
+                  <?php echo $url_1_text; ?>
+                <?php else: ?>
+                  <?php echo $url_1; ?>
+                <?php endif; ?>
+                <i class="fas fa-share-square" aria-hidden="true"></i>
+              </a>
+            </li>
+          <?php endif; ?>
+          <?php if ($url_2): ?>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo $url_2; ?>">
+                <?php if ($url_2_text): ?>
+                  <?php echo $url_2_text; ?>
+                <?php else: ?>
+                  <?php echo $url_2; ?>
+                <?php endif; ?>
+                <i class="fas fa-share-square" aria-hidden="true"></i>
+              </a>
+            </li>
+          <?php endif; ?>
+          <?php if ($url_3): ?>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo $url_3; ?>">
+                <?php if ($url_3_text): ?>
+                  <?php echo $url_3_text; ?>
+                <?php else: ?>
+                  <?php echo $url_3; ?>
+                <?php endif; ?>
+                <i class="fas fa-share-square" aria-hidden="true"></i>
+              </a>
+            </li>
+          <?php endif; ?>
+          <?php if ($url_4): ?>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo $url_4; ?>">
+                <?php if ($url_4_text): ?>
+                  <?php echo $url_4_text; ?>
+                <?php else: ?>
+                  <?php echo $url_4; ?>
+                <?php endif; ?>
+                <i class="fas fa-share-square" aria-hidden="true"></i>
+              </a>
+            </li>
+          <?php endif; ?>
+          <?php if ($url_5): ?>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo $url_5; ?>">
+                <?php if ($url_5_text): ?>
+                  <?php echo $url_5_text; ?>
+                <?php else: ?>
+                  <?php echo $url_5; ?>
+                <?php endif; ?>
+                <i class="fas fa-share-square" aria-hidden="true"></i>
+              </a>
+            </li>
+          <?php endif; ?>
+        </ul>
+    </div>
+  </nav>
+</div>

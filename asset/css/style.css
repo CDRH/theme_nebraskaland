@@ -2,40 +2,16 @@
 @media screen for CSS precedence 
 because Omeka S base uses it */
 @media screen {
-  /* ////////////
-  Override Omeka S base 
-  //////////////*/
-  header {
-    background-color: initial;
-    color: initial;
-    min-height: initial;
-    padding: initial;
-    width: initial;
-  }
-  header nav li > a {
-    color: #ceccd2;
-  }
-  header nav li > a::before {
-    content: none;
-  }
-  .logo {
-    background: initial;
-    margin: initial;
-    padding: initial;
-  }
   /*/////////////
   Body
   /////////////*/
-  body {
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 16px;
-    line-height: 1.428571429;
-    color: #534f59;
-  }
   #body-wrapper {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+  }
+  #footer {
+    flex-grow: 1;
   }
   .container::after {
     clear: both;
@@ -43,133 +19,106 @@ because Omeka S base uses it */
   /*/////////////
   Header
   /////////////*/
+  .banner {
+    background-position: center;
+    background-size: cover;
+    height: 112px;
+    position: relative;
+    z-index: -10;
+  }
+  .site-title-container {
+    line-height: 1;
+    text-align: center;
+  }
+  .site-title-container a {
+    text-decoration: none;
+  }
+  .site-title-container a:hover {
+    text-decoration: none;
+  }
+  .site-title {
+    color: #f9b231;
+    font-family: var(--bs-font-sans-serif);
+    font-size: 4rem;
+    font-weight: 700;
+    position: relative;
+  }
+  .site-title .title_ne {
+    position: relative;
+    text-shadow: 0.03em 0.03em 1px #676665;
+  }
+  .site-title .title_ne::before {
+    content: "Nebraska";
+    position: absolute;
+    top: 0.28em;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    z-index: -1;
+    text-shadow: 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white;
+  }
+  .site-title .title_land {
+    font-weight: 100;
+    position: relative;
+    text-shadow: 0.03em 0.03em 1px #676665;
+  }
+  .site-title .title_land::before {
+    content: "land";
+    position: absolute;
+    top: 0.28em;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    z-index: -1;
+    text-shadow: 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white;
+  }
+  .site-subtitle {
+    color: #504a4b;
+    display: block;
+    font-family: "open-sans", "Open Sans", Arial, sans-serif;
+    font-size: 1.5rem;
+    position: relative;
+    text-transform: uppercase;
+    z-index: 200;
+  }
+  /* md */
   /*/////////////
   Navbar
   /////////////*/
-  .navbar::after,
-  .navbar::before {
-    clear: both;
-  }
-  .navbar::after,
-  .navbar::before {
-    content: " ";
-    display: table;
-  }
-  .navbar {
-    position: relative;
-    min-height: 50px;
-    margin-bottom: 22px;
-    border: 1px solid transparent;
-    border-top-color: transparent;
-    border-right-color: transparent;
-    border-bottom-color: transparent;
-    border-left-color: transparent;
-  }
-  .navbar-gamesandparks {
-    font-size: 0.7em;
-    margin-bottom: 0;
-    min-height: 20px;
-  }
-  .navbar-inverse {
-    background-color: #222;
-    border-color: #090909;
-  }
-} /* end @media screen */
-.site-title-container {
-  background-image: url(/assets/header-88392094ba3afe7b3141cc189d6fb6c231856f3cb501b6b1f916bb0f07b7da9e.jpg);
-  background-position: center;
-  background-size: cover;
-  height: 200px;
-  padding-top: 1.5em;
-  position: relative;
-  z-index: -10;
 }
-
-.site-title-container .h1 {
-  font-size: 6em;
-  line-height: 0.7em;
-  text-align: center;
-}
-
-.site-title-container .h1 small {
-  color: #504a4b;
-  display: block;
-  font-family: "open-sans";
-  font-size: 0.37em;
-  position: relative;
-  text-transform: uppercase;
-  z-index: 200;
-}
-
-.site-title {
-  color: #f9b231;
-  font-family: "ff-dagny-web-pro", serif;
-  font-weight: 700;
-  position: relative;
-}
-
-.title_land {
-  font-weight: 100;
-}
-
-@media (max-width: 700px) {
-  .site-title-container {
-    font-size: 0.6em;
-    height: auto;
-    padding-bottom: 0.5em;
+@media screen and (min-width: 768px) {
+  .banner {
+    height: 200px;
+  }
+  .site-title {
+    font-size: 6rem;
+  }
+  .site-subtitle {
+    font-size: 3rem;
   }
 }
-@media (max-width: 400px) {
-  .site-title-container {
-    font-size: 0.5em;
+@media screen {
+  .top-menu .navbar {
+    border: 1px solid #090909;
+  }
+  .top-menu .navbar .nav-link {
+    --bs-nav-link-color: #ceccd2;
+    --bs-nav-link-hover-color: white;
   }
 }
-.title_ne {
-  position: relative;
-  text-shadow: 0.03em 0.03em 1px #676665;
-}
-
-.title_ne:before {
-  content: "Nebraska";
-  position: absolute;
-  top: 0.28em;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  color: white;
-  z-index: -1;
-  text-shadow: 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white;
-}
-
-.title_land {
-  text-shadow: 0.03em 0.03em 1px #676665;
-  position: relative;
-}
-
-.title_land:before {
-  content: "land";
-  position: absolute;
-  top: 0.28em;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  color: white;
-  z-index: -1;
-  text-shadow: 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white;
-}
-
-#header > .site-title a:hover {
-  text-decoration: none;
-}
-
-.site-title-container .site-subtitle {
-  color: #504a4b;
-  display: block;
-  font-family: "open-sans";
-  font-size: 0.37em;
-  position: relative;
-  text-transform: uppercase;
-  z-index: 200;
+/* end @media screen */
+:root {
+  --bs-font-sans-serif: "ff-dagny-web-pro", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-serif: Georgia, "Times New Roman", Times, serif;
+  --bs-body-font-family: var(--bs-font-serif);
+  --bs-body-color: #534f59;
+  --bs-body-color-rgb: 83, 79, 89;
+  --bs-primary: #1F5B8A;
+  --bs-primary-rgb: 31, 91, 13;
+  --bs-dark: #222;
+  --bs-dark-rgb: 34, 34, 34;
 }
 
 /*# sourceMappingURL=style.css.map */

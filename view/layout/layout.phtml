@@ -1,0 +1,77 @@
+<?php
+$escape = $this->plugin('escapeHtml');
+$translate = $this->plugin('translate');
+$this->headMeta()->setCharset('utf-8');
+$this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1');
+$this->headLink()->prependStylesheet('https://use.typekit.net/kzr8rev.css');
+$this->headLink()->prependStylesheet('//fonts.googleapis.com/css?family=Source+Code+Pro%7CLato:400,400italic,700,700italic');
+$this->headTitle($this->setting('installation_title', 'Omeka S'))->setSeparator(' | ');
+$this->headLink()->appendStylesheet($this->assetUrl('css/iconfonts.css', 'Omeka'));
+// $this->headLink()->appendStylesheet($this->assetUrl('css/style.css', 'Omeka'));
+$this->headScript()->prependFile($this->assetUrl('vendor/jquery/jquery.min.js', 'Omeka'));
+$this->headScript()->appendFile($this->assetUrl('js/global.js', 'Omeka'));
+
+// Bootstrap CSS and Javascript links
+$this->headLink()->appendStylesheet($this->assetUrl('vendor/bootstrap/css/bootstrap-reboot.css'));
+$this->headLink()->appendStylesheet($this->assetUrl('vendor/bootstrap/css/bootstrap.min.css'));
+$this->headLink()->appendStylesheet($this->assetUrl('vendor/bootstrap/css/bootstrap-grid.min.css'));
+$this->headLink()->appendStylesheet($this->assetUrl('vendor/bootstrap/css/bootstrap-reboot.min.css'));
+$this->headScript()->appendFile($this->assetUrl('vendor/bootstrap/js/bootstrap.bundle.js'));
+
+// Theme CSS
+$this->headLink()->appendStylesheet($this->assetUrl('css/style.css'));
+// Theme JS 
+// $this->headScript()->appendFile($this->assetUrl('js/nebraskaland.js'));
+
+$this->trigger('view.layout');
+$userBar = $this->userBar();
+?>
+<?php echo $this->doctype(); ?>
+<?php echo $this->htmlElement('html')->setAttribute('lang', $this->lang()); ?>
+    <head>
+        <?php echo $this->headMeta(); ?>
+        <?php echo $this->headTitle(); ?>
+        <?php echo $this->partial('common/header/favicon'); ?>
+        <?php echo $this->headLink(); ?>
+        <?php echo $this->headStyle(); ?>
+        <?php echo $this->headScript(); ?>
+        <?php if ($this->themeSettingAsset('banner')): ?>
+          <style type="text/css">
+            .banner { 
+              background-image: url(<?php echo $this->themeSettingAssetUrl('banner'); ?>);
+            }
+          </style>
+        <?php endif; ?>
+    </head>
+    <?php echo $this->htmlElement('body')->appendAttribute('id', 'body-wrapper'); ?>
+        <header>
+        <div href="#content" class="sr-only sr-only-focusable">
+          Skip to main content
+        </div>
+          <?php echo $userBar; ?>
+          <?php echo $this->partial('common/header/top-menu'); ?>
+          <?php echo $this->partial('common/header/site-title'); ?>
+          <?php echo $site->publicNav(); // ->menu()->setPartial('common/header/main-menu.phtml')->renderPartial(); ?>
+        </header>
+        <main id="content">
+            <div class="container">
+              <?php echo $this->messages(); ?>
+              <?php echo $this->content; ?>
+            </div>
+        </main>
+        <footer id="footer">
+          <div class="container">
+            <?php if ($this->themeSetting('footer')): ?>
+              <div class="footer-text">
+                <?php echo $this->themeSetting('footer'); ?>
+              </div>
+            <?php endif; ?>
+            <?php if ($this->themeSettingAsset('logo_1')): ?>
+              <div class="footer-logos">
+                <?php echo $this->partial('common/footer/logos'); ?>
+              </div>
+            <?php endif; ?>
+          </div>
+        </footer>
+    </body>
+</html>

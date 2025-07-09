@@ -1,0 +1,139 @@
+/* Keep all CSS wrapped in 
+@media screen for CSS precedence 
+because Omeka S base uses it */
+
+@media screen {
+
+/*/////////////
+Body
+/////////////*/
+
+// body {
+//   font-size: 16px;
+//   line-height: 1.428571429;
+// }
+
+  #body-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  #footer {
+    flex-grow: 1;
+  }
+
+  .container::after {
+    clear: both;
+  }
+
+/*/////////////
+Header
+/////////////*/
+
+  .banner {
+    background-position: center;
+    background-size: cover;
+    height: 112px;
+    position: relative;
+    z-index: -10;
+  }
+
+  .site-title-container {
+    line-height: 1;
+    text-align: center;
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .site-title {
+    color: #f9b231;
+    font-family: var(--bs-font-sans-serif);
+    font-size: 4rem;
+    font-weight: 700;
+    position: relative;
+
+    .title_ne {
+      position: relative;
+      text-shadow: .03em .03em 1px #676665;
+
+      &::before {
+        content: "Nebraska";
+        position: absolute;
+        top: .28em;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        color: white;
+        z-index: -1;
+        text-shadow: 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white;
+      }
+    }
+
+    .title_land {
+      font-weight: 100;
+      position: relative;
+      text-shadow: .03em .03em 1px #676665;
+
+      &::before {
+        content: "land";
+        position: absolute;
+        top: .28em;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        color: white;
+        z-index: -1;
+        text-shadow: 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white;
+      }
+    }
+  }
+
+  .site-subtitle {
+    color: #504a4b;
+    display: block;
+    font-family: "open-sans", "Open Sans", Arial, sans-serif;
+    font-size: 1.5rem;
+    position: relative;
+    text-transform: uppercase;
+    z-index: 200;
+  }
+
+  /* md */
+  @media screen and (min-width: 768px) {
+
+    .banner {
+      height: 200px;
+    }
+
+    .site-title {
+      font-size: 6rem;
+    }
+
+    .site-subtitle {
+      font-size: 3rem;
+    }
+  }
+
+/*/////////////
+Navbar
+/////////////*/
+
+  .top-menu .navbar {
+    border: 1px solid #090909;
+
+    .nav-link {
+      --bs-nav-link-color: #ceccd2;
+      --bs-nav-link-hover-color: white;
+    }
+  }
+
+}
+
+/* end @media screen */

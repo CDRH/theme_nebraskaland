@@ -1,0 +1,17 @@
+<div class="site-title-container text-center">
+  <div class="banner d-flex align-items-center w-100">
+    <div class="container">
+      <a class="d-block mb-md-4" href="<?php echo $site->url(); ?>">
+          <?php if ($this->themeSetting('logo')): ?>
+            <img class="site-logo" src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" alt="<?php echo $escape($siteTitle); ?>" />
+          <?php else: ?>
+            <span class="site-title">
+              <span class="title_ne">Nebraska</span><span class="title_land">land</span>
+            </span>
+            <span class="site-subtitle">Digital Archive</span>
+          <?php endif; ?>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
