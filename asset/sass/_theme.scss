@@ -27,6 +27,11 @@ Body
     clear: both;
   }
 
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: var(--ngp-font-slab-serif);
+  }
+
 /*/////////////
 Header
 /////////////*/
@@ -53,7 +58,7 @@ Header
   }
 
   .site-title {
-    color: #f9b231;
+    color: var(--ngp-yellow);
     font-family: var(--bs-font-sans-serif);
     font-size: 4rem;
     font-weight: 700;
@@ -96,9 +101,9 @@ Header
   }
 
   .site-subtitle {
-    color: #504a4b;
+    color: var(--ngp-brown);
     display: block;
-    font-family: "open-sans", "Open Sans", Arial, sans-serif;
+    font-family: var(--ngp-font-subtitle);
     font-size: 1.5rem;
     position: relative;
     text-transform: uppercase;
@@ -122,18 +127,191 @@ Header
   }
 
 /*/////////////
-Navbar
+// Navbars
 /////////////*/
 
   .top-menu .navbar {
     border: 1px solid #090909;
 
     .nav-link {
-      --bs-nav-link-color: #ceccd2;
+      --bs-nav-link-color: var(--ngp-light-gray);
       --bs-nav-link-hover-color: white;
     }
   }
 
-}
+  // Omeka S-rendered menus
+  .navigation {
+    --bs-nav-link-padding-x: 0;
+    --bs-nav-link-padding-y: 0;
+  //  @include rfs($nav-link-font-size, --bs-nav-link-font-size);
+    --bs-nav-link-font-weight: var(--bs-nav-link-font-weight);
+    --bs-nav-link-color: white;
+    --bs-nav-link-hover-color: var(--bs-navbar-hover-color);
+    --bs-nav-link-disabled-color: var(--bs-navbar-disabled-color);
 
-/* end @media screen */
+    display: flex;
+    flex-direction: column; // cannot use `inherit` to get the `.navbar`s value
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    a {
+      display: block;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+  }
+
+  @media screen and (min-width: 576px) {
+    .navigation {
+      flex-direction: row;
+      width: 100%;
+    }    
+  }
+
+  .main-menu {
+    --bs-border-width: 2px;
+    --bs-navbar-toggler-border-color: rgba(255,255,255,0.75);
+    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+
+    background: var(--ngp-blue);
+    font-size: 1.5rem;
+    padding: 0;
+
+    nav {
+      width: 100%;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    // Primary links
+    ul.navigation {
+      > li {
+        > a {
+            color: var(--bs-nav-link-color);
+          }
+
+        > a:active,
+        > a:hover,
+        &.active > a {
+          background-color: var(--ngp-dark-blue);
+          color: var(--ngp-light-yellow);
+        }
+      } 
+    }
+
+    // Secondary links 
+    li > ul {
+      background: var(--ngp-lighter-brown);
+      display: flex;
+      flex-direction: column;
+      font-size: 1.325rem;
+
+      li {
+
+        a {
+          color: black;
+          padding-left: 28px;
+        }
+
+        a:active,
+        a:hover,
+        &.active a {
+          background: var(--ngp-light-brown);
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 575px) {
+    .main-menu {
+      background: transparent;
+    }
+
+    .navigation {
+      background: var(--ngp-blue);
+      width: 100%;
+    }
+
+    // li.active > ul {
+    //   z-index: 2;
+    // }
+
+    // li.active:after {
+    //   background: var(--bs-body-bg);
+    //   content: '';
+    //   display: block;
+    //   height: 3.5rem;
+    //   left: 0;
+    //   position :absolute;
+    //   width: 100%;
+    //   z-index: 1;
+    // }
+    
+    // li.active:has(ul):after {
+    //   content: '';
+    //   display:block;
+    //   height: 3.5rem;
+    //   position:relative;
+    //   width: 3.5rem;
+    // }
+
+    // li.active:after {
+    //   background: var(--bs-body-bg);
+    //   content: '';
+    //   display:block;
+    //   height: 3.5rem;
+    //   position:relative;
+    //   width: 3.5rem;
+    //   z-index: -1;
+    // }
+
+    // li.active:not(:has(ul)):after {
+    //   content: none;
+    // }
+
+    li.active ul {
+      flex-direction: row;
+      height: 3.5rem;
+      justify-content: center;
+      left: 0;
+      position: absolute;
+      width: 100%;
+
+      li a {
+        padding: 0.75rem 1.25rem;
+      }
+    }
+
+    li:not(.active) > ul {
+      display: none;
+    }
+
+    .subnav-spacer {
+      height: 3.5rem;
+    }
+
+    .subnav-spacer-3 {
+      height: 7rem;
+    }
+  }
+
+  // end navigation
+
+
+  // hidden on show.phtml
+  main .sub-menu {
+    display: none;
+  }
+
+
+
+
+
+
+} // end @media screen

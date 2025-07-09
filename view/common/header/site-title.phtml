@@ -5,10 +5,10 @@
           <?php if ($this->themeSetting('logo')): ?>
             <img class="site-logo" src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" alt="<?php echo $escape($siteTitle); ?>" />
           <?php else: ?>
-            <span class="site-title">
+            <div class="site-title">
               <span class="title_ne">Nebraska</span><span class="title_land">land</span>
-            </span>
-            <span class="site-subtitle">Digital Archive</span>
+            </div>
+            <div class="site-subtitle">Digital Archive</div>
           <?php endif; ?>
         </a>
       </div>

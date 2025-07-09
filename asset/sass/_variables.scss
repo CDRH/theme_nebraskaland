@@ -1,12 +1,28 @@
 :root {
-  --bs-font-sans-serif: "ff-dagny-web-pro", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
- --bs-font-serif: Georgia, "Times New Roman", Times, serif;
- --bs-body-font-family: var(--bs-font-serif);
- --bs-body-color: #534f59;
- --bs-body-color-rgb: 83, 79, 89;
- --bs-primary: #1F5B8A;
- --bs-primary-rgb: 31, 91, 13;
- --bs-dark: #222;
- --bs-dark-rgb: 34, 34, 34;
 
+   // Custom
+ --ngp-brown: #504a4b;
+ --ngp-light-brown: #a09a9b;
+ --ngp-lighter-brown: #c1babc;
+ --ngp-yellow: #f9b231;
+ --ngp-light-yellow: #FAE6AE;
+
+ --ngp-blue: #1F5B8A;
+ --ngp-dark-blue: #19496f;
+
+ --ngp-light-gray: #ceccd2;
+
+ --ngp-font-subtitle: "open-sans", "Open Sans", Arial, sans-serif;
+ --ngp-font-slab-serif: "cordale", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+
+ // Bootstrap
+  --bs-font-sans-serif: "ff-dagny-web-pro", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-serif: Georgia, "Times New Roman", Times, serif;
+  --bs-body-font-family: var(--bs-font-serif);
+
+  --bs-body-color: #534f59;
+  --bs-body-color-rgb: 83, 79, 89;
+  --bs-dark: #222;
+  --bs-dark-rgb: 34, 34, 34;
 }
