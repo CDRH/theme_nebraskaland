@@ -179,7 +179,7 @@ Header
   }
 
   // Omeka S-rendered menus
-  .navigation {
+  header .navigation {
     --bs-nav-link-padding-x: 0;
     --bs-nav-link-padding-y: 0;
   //  @include rfs($nav-link-font-size, --bs-nav-link-font-size);
@@ -204,7 +204,7 @@ Header
   }
 
   @media screen and (min-width: 576px) {
-    .navigation {
+    header .navigation {
       flex-direction: row;
       width: 100%;
     }    
@@ -268,83 +268,40 @@ Header
   }
 
   @media screen and (min-width: 575px) {
-    .main-menu {
-      background: transparent;
-    }
-
-    .navigation {
-      background: var(--ngp-blue);
-      width: 100%;
-    }
-
-
-    .main-menu:has( li.active > ul ) {
-      margin-bottom: 3.5rem;
-    }
-
-    // li.active > ul {
-    //   z-index: 2;
-    // }
-
-    // li.active:after {
-    //   background: var(--bs-body-bg);
-    //   content: '';
-    //   display: block;
-    //   height: 3.5rem;
-    //   left: 0;
-    //   position :absolute;
-    //   width: 100%;
-    //   z-index: 1;
-    // }
-    
-    // li.active:has(ul):after {
-    //   content: '';
-    //   display:block;
-    //   height: 3.5rem;
-    //   position:relative;
-    //   width: 3.5rem;
-    // }
-
-    // li.active:after {
-    //   background: var(--bs-body-bg);
-    //   content: '';
-    //   display:block;
-    //   height: 3.5rem;
-    //   position:relative;
-    //   width: 3.5rem;
-    //   z-index: -1;
-    // }
-
-    // li.active:not(:has(ul)):after {
-    //   content: none;
-    // }
-
-    li.active ul {
-      flex-direction: row;
-      height: 3.5rem;
-      justify-content: center;
-      left: 0;
-      position: absolute;
-      width: 100%;
-
-      li a {
-        padding: 0.75rem 1.25rem;
+    header {
+      .main-menu {
+        background: transparent;
+        
+        &:has( li.active > ul ) {
+          margin-bottom: 3.5rem;
+        }
+        
+        .navigation {
+          background: var(--ngp-blue);
+          width: 100%;
+        }
       }
-    }
 
-    li:not(.active) > ul {
-      display: none;
+      li.active ul {
+        flex-direction: row;
+        height: 3.5rem;
+        justify-content: center;
+        left: 0;
+        position: absolute;
+        width: 100%;
+
+        li a {
+          padding: 0.75rem 1.25rem;
+        }
+      }
+
+      li:not(.active) > ul {
+        display: none;
+      }
     }
   }
 
   // end navigation
-
-
-  // hidden on show.phtml
-  main .sub-menu {
-    display: none;
-  }
-
 
 /*/////////////
 Main
@@ -352,6 +309,18 @@ Main
 
 #content .block-pageTitle {
   margin-top: 3rem;
+}
+
+main {
+  .sub-menu {
+    .navigation {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      list-style: none;
+      padding: 1rem 0 0 0;
+    }
+  }
 }
 
 // main {
