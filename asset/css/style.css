@@ -25,9 +25,15 @@ because Omeka S base uses it */
   }
   h2, .h2 {
     font-size: var(--ngp-font-size-h2);
+    margin-top: 1.5rem;
   }
   h3, .h3 {
     font-size: var(--ngp-font-size-h3);
+    margin-top: 1.5rem;
+  }
+  h4, .h4 {
+    font-size: var(--ngp-font-size-h4);
+    margin-top: 1rem;
   }
   /*/////////////
   Header
@@ -213,6 +219,9 @@ because Omeka S base uses it */
     background: var(--ngp-blue);
     width: 100%;
   }
+  .main-menu:has(li.active > ul) {
+    margin-bottom: 3.5rem;
+  }
   li.active ul {
     flex-direction: row;
     height: 3.5rem;
@@ -227,22 +236,13 @@ because Omeka S base uses it */
   li:not(.active) > ul {
     display: none;
   }
-  .subnav-spacer {
-    height: 3.5rem;
-  }
-  .subnav-spacer-3 {
-    height: 7rem;
-  }
 }
 @media screen {
   main .sub-menu {
     display: none;
   }
-  main > div:first-child {
-    padding-top: 3rem;
-  }
-  main > div:first-child .breadcrumbs {
-    margin-top: 3.5rem;
+  #content .block-pageTitle {
+    margin-top: 3rem;
   }
 }
 :root {
@@ -256,9 +256,10 @@ because Omeka S base uses it */
   --ngp-light-gray: #ceccd2;
   --ngp-font-subtitle: "open-sans", "Open Sans", Arial, sans-serif;
   --ngp-font-slab-serif: "cordale", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --ngp-font-size-h1: 4.1rem;
-  --ngp-font-size-h2: 3.4rem;
-  --ngp-font-size-h3: 2.8rem;
+  --ngp-font-size-h1: 2.625rem;
+  --ngp-font-size-h2: 2.125rem;
+  --ngp-font-size-h3: 1.75rem;
+  --ngp-font-size-h4: 1.5rem;
   --bs-font-sans-serif: "ff-dagny-web-pro", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-serif: Georgia, "Times New Roman", Times, serif;
   --bs-body-font-family: var(--bs-font-serif);
