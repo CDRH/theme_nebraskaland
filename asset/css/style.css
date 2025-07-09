@@ -33,7 +33,7 @@ because Omeka S base uses it */
   }
   h4, .h4 {
     font-size: var(--ngp-font-size-h4);
-    margin-top: 1rem;
+    margin-top: 1.5rem;
   }
   /*/////////////
   Header
