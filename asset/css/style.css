@@ -107,6 +107,9 @@ because Omeka S base uses it */
   .top-menu .navbar {
     border: 1px solid #090909;
   }
+  .top-menu .navbar .navbar-nav {
+    --bs-nav-link-padding-y: 5px;
+  }
   .top-menu .navbar .nav-link {
     --bs-nav-link-color: var(--ngp-light-gray);
     --bs-nav-link-hover-color: white;
@@ -128,7 +131,7 @@ because Omeka S base uses it */
   }
   .navigation a {
     display: block;
-    padding: 14px 16px;
+    padding: 12px 16px;
     text-decoration: none;
   }
 }
