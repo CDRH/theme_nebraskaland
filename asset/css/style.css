@@ -1,3 +1,69 @@
+/* ////////////////////////////////
+Asset Block Template: 
+Random Asset with Caption Overlay
+//////////////////////////////// */
+.random-background-image {
+  background-position: center center;
+  background-size: cover;
+  display: none;
+  justify-content: end;
+  min-height: 40vh;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  width: 100%;
+}
+
+.display-attachment-1 .attachment-1 {
+  display: flex;
+}
+
+.display-attachment-2 .attachment-2 {
+  display: flex;
+}
+
+.display-attachment-3 .attachment-3 {
+  display: flex;
+}
+
+.display-attachment-4 .attachment-4 {
+  display: flex;
+}
+
+.display-attachment-5 .attachment-5 {
+  display: flex;
+}
+
+.random-background-image .container {
+  padding: 0;
+}
+.random-background-image .caption {
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 1.25rem;
+  line-height: 1.25;
+  margin: 20px 0px 20px auto;
+  padding: 20px 20px 10px 20px;
+  text-align: center;
+}
+.random-background-image .caption a {
+  color: black;
+}
+
+@media screen and (min-width: 768px) {
+  .caption {
+    width: 45vw;
+  }
+}
+@media screen and (min-width: 992px) {
+  .caption {
+    font-size: 1.37rem;
+    width: 30vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .caption {
+    font-size: 1.5rem;
+  }
+}
 /* Keep all CSS wrapped in 
 @media screen for CSS precedence 
 because Omeka S base uses it */
@@ -249,6 +315,11 @@ because Omeka S base uses it */
     padding: 1rem 0 0 0;
   }
 }
+.site-page-home main > .container:first-child {
+  max-width: 100%;
+  padding: 0;
+}
+
 :root {
   --ngp-brown: #504a4b;
   --ngp-light-brown: #a09a9b;

@@ -78,6 +78,9 @@ $showPagePagination = $this->siteSetting('show_page_pagination', false);
         <main id="content">
             <div class="container">
               <?php echo $this->messages(); ?>
+              <?php // if ($this->isHomePage() == 'true'): ?>
+                <!-- Home page! -->
+                <?php // endif; ?>
               <?php echo $this->content; ?>
             </div>
         </main>

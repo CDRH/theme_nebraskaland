@@ -1,0 +1,21 @@
+<?php $escape = $this->plugin('escapeHtml'); ?>
+<?php $attachmentCount = count($attachments); ?>
+<?php $randomAttachment = rand(1, $attachmentCount); ?>
+
+<div class="assets display-attachment-<?php echo $randomAttachment; ?>">
+  <?php 
+  $i = 1;
+  foreach ($attachments as $attachment): ?>
+    <?php $asset = $attachment['asset']; ?>
+    <?php $assetImage = ($asset) ? $this->thumbnail($asset, 'square', ['class' => 'card-image']) : ''; ?>
+    <div class="asset attachment-<?php echo $i++; ?> random-background-image" style="background-image: url('<?php echo $asset->assetUrl(); ?>');">
+      <?php if ($attachment['caption'] !== ''): ?>
+        <div class="container">
+          <div class="caption">
+            <?php echo $attachment['caption']; ?>
+          </div>
+        </div>
+      <?php endif; ?>
+    </div>
+  <?php endforeach; ?>
+</div>

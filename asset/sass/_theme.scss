@@ -336,3 +336,12 @@ main {
 
 
 } // end @media screen
+
+
+
+.site-page-home {
+  main > .container:first-child {
+    max-width: 100%;
+    padding: 0;
+  }
+}
