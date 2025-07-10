@@ -11,6 +11,10 @@ Random Asset with Caption Overlay
   width: 100%;
 }
 
+.assets .asset.random-background-image:not(:last-child) {
+  margin-bottom: 0;
+}
+
 .display-attachment-1 .attachment-1 {
   display: flex;
 }
@@ -112,6 +116,9 @@ because Omeka S base uses it */
   /*/////////////
   Main
   /////////////*/
+  /* /////////
+  Footer 
+  ///////// */
 }
 @media screen and (min-width: 1200px) {
   h1, .h1 {
@@ -181,7 +188,7 @@ because Omeka S base uses it */
     text-shadow: 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white;
   }
   .site-subtitle {
-    color: var(--ngp-brown);
+    color: var(--ngp-dark-brown);
     display: block;
     font-family: var(--ngp-font-subtitle);
     font-size: 1.5rem;
@@ -315,6 +322,36 @@ because Omeka S base uses it */
     list-style: none;
     padding: 1rem 0 0 0;
   }
+  #footer {
+    background: var(--ngp-brown);
+    color: white;
+    font-size: 1.35rem;
+    padding-top: 18px;
+    text-align: center;
+  }
+  #footer a {
+    color: white;
+  }
+  .footer-logos {
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 3.5rem;
+    justify-content: center;
+    margin: auto;
+    padding: 30px 0 50px 0;
+  }
+  .footer-logos img {
+    max-width: 300px;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .footer-logos {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 }
 .site-page-home main > .container:first-child {
   max-width: 100%;
@@ -322,7 +359,8 @@ because Omeka S base uses it */
 }
 
 :root {
-  --ngp-brown: #504a4b;
+  --ngp-dark-brown: #504a4b;
+  --ngp-brown: #676665;
   --ngp-light-brown: #a09a9b;
   --ngp-lighter-brown: #c1babc;
   --ngp-yellow: #f9b231;

@@ -15,6 +15,10 @@ Random Asset with Caption Overlay
   width: 100%;
 }
 
+.assets .asset.random-background-image:not(:last-child) {
+  margin-bottom: 0;
+}
+
 .display-attachment-1 .attachment-1 {
   display: flex;
 }
