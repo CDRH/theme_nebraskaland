@@ -12,8 +12,6 @@ Random Asset with Caption Overlay
   display: none;
   justify-content: end;
   min-height:40vh;
-  padding-bottom: 20px;
-  padding-top: 20px;
   width: 100%;
 }
 
@@ -48,7 +46,7 @@ Random Asset with Caption Overlay
   .caption {
     background:rgba(255,255,255,0.8);
     font-size: 1.25rem;
-    line-height: 1.25;
+    line-height: 1.2;
     margin: 20px 0px 20px auto;
     padding: 20px 20px 10px 20px;
     text-align: center;
