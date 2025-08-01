@@ -1,0 +1,16 @@
+<?php
+$translate = $this->plugin('translate');
+$this->headLink()->appendStylesheet($this->assetUrl('css/resource-page-blocks.css', 'Omeka'));
+$this->htmlElement('body')->appendAttribute('class', 'item resource show');
+$filterLocale = (bool) $this->siteSetting('filter_locale_values');
+$lang = $this->lang();
+$valueLang = $filterLocale ? [$lang, ''] : null;
+?>
+<?php echo $this->pageTitle($item->displayTitle(null, $valueLang), 1); ?>
+<?php if ($item->value('dcterms:date')): ?>
+  <div class="h2 item-date"><?php echo $item->value('dcterms:date'); ?></div>
+<?php endif; ?>
+<!-- <h2><?php // echo $translate('Item'); ?></h2> -->
+<?php $this->trigger('view.show.before'); ?>
+<?php echo $this->resourcePageBlocks($item)->getBlocks(); ?>
+<?php $this->trigger('view.show.after'); ?>

@@ -358,6 +358,71 @@ because Omeka S base uses it */
   padding: 0;
 }
 
+@media screen {
+  .item.resource.show {
+    --ngp-font-size-h3: 2rem;
+    --bs-body-font-size: 1.1rem;
+  }
+  .item.resource.show h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0px;
+    margin-top: 40px;
+    text-align: center;
+  }
+  .item.resource.show .h2.item-date {
+    font-size: 2.75rem;
+    margin-top: 4px;
+    text-align: center;
+  }
+}
+a.gallery.gallery-page {
+  display: 120px;
+}
+
+span.pageimage {
+  border-bottom: 2px solid #aaa;
+  border-left: 2px solid #aaa;
+  border-right: 2px solid #aaa;
+  clear: both;
+  float: right;
+  margin: 0 0 1em 0.5em;
+  padding: 0;
+}
+span.pageimage img {
+  max-height: 120px;
+}
+
+.hr {
+  border-top: 2px solid #aaa;
+  clear: right;
+  display: block;
+  height: 0;
+  margin: 10px 0 0 0;
+  padding: 0px 0 0 0;
+  width: 100%;
+}
+
+.metadata {
+  border: solid 2px #a7a4ae;
+  clear: both;
+  margin-top: 2em;
+  padding: 1em;
+}
+
+.tei_ab, .tei_byline, .tei_fw {
+  display: block;
+}
+
+.tei_byline, .tei_ab_type_subhead, .tei_ab_type_credit {
+  font-weight: 800;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+
+.tei_fw {
+  margin-bottom: 1em;
+}
+
 :root {
   --ngp-dark-brown: #504a4b;
   --ngp-brown: #676665;
