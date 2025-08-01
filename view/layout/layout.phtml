@@ -8,8 +8,9 @@ $this->headLink()->prependStylesheet('//fonts.googleapis.com/css?family=Source+C
 $this->headTitle($this->setting('installation_title', 'Omeka S'))->setSeparator(' | ');
 $this->headLink()->appendStylesheet($this->assetUrl('css/iconfonts.css', 'Omeka'));
 // $this->headLink()->appendStylesheet($this->assetUrl('css/style.css', 'Omeka'));
-$this->headScript()->prependFile($this->assetUrl('vendor/jquery/jquery.min.js', 'Omeka'));
 $this->headScript()->appendFile($this->assetUrl('js/global.js', 'Omeka'));
+$this->headScript()->prependFile($this->assetUrl('vendor/jquery/jquery.min.js', 'Omeka'));
+$this->jsTranslate();
 
 // Bootstrap CSS and Javascript links
 $this->headLink()->appendStylesheet($this->assetUrl('vendor/bootstrap/css/bootstrap-reboot.css'));
@@ -17,6 +18,11 @@ $this->headLink()->appendStylesheet($this->assetUrl('vendor/bootstrap/css/bootst
 $this->headLink()->appendStylesheet($this->assetUrl('vendor/bootstrap/css/bootstrap-grid.min.css'));
 $this->headLink()->appendStylesheet($this->assetUrl('vendor/bootstrap/css/bootstrap-reboot.min.css'));
 $this->headScript()->appendFile($this->assetUrl('vendor/bootstrap/js/bootstrap.bundle.js'));
+
+// Fancybox
+$this->headLink()->appendStylesheet($this->assetUrl('vendor/fancybox/css/fancybox.min.css'));
+$this->headScript()->appendFile($this->assetUrl('vendor/fancybox/js/fancybox.min.js'));
+$this->headScript()->appendFile($this->assetUrl('vendor/fancybox/js/item_gallery_lightbox.js'));
 
 // Theme CSS
 $this->headLink()->appendStylesheet($this->assetUrl('css/style.css'));
