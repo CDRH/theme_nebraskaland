@@ -192,6 +192,7 @@ because Omeka S base uses it */
     display: block;
     font-family: var(--ngp-font-subtitle);
     font-size: 1.5rem;
+    font-weight: 600;
     position: relative;
     text-transform: uppercase;
     z-index: 200;
@@ -211,7 +212,7 @@ because Omeka S base uses it */
 @media screen {
   .top-menu .navbar {
     border: 1px solid #090909;
-    font-size: 1.1rem;
+    font-size: var(--ngp-body-font-size-sm);
   }
   .top-menu .navbar .navbar-nav {
     --bs-nav-link-padding-y: 5px;
@@ -430,7 +431,7 @@ because Omeka S base uses it */
 select {
   --bs-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
   padding: 0.375rem 2.25rem 0.375rem 0.75rem;
-  font-size: 1.1rem;
+  font-size: var(--ngp-body-font-size-sm);
   font-weight: 400;
   line-height: 1.5;
   color: var(--bs-body-color);
@@ -476,6 +477,19 @@ button[type=submit]:hover {
   background: var(--bs-btn-hover-bg);
   border-color: var(--bs-btn-hover-border-color);
   color: var(--bs-btn-hover-color);
+  opacity: initial;
+}
+
+#section-sidebar-modal-toggle {
+  background: var(--ngp-blue);
+  border: 3px solid var(--ngp-blue);
+  color: white;
+  font-weight: 700;
+}
+#section-sidebar-modal-toggle:focus, #section-sidebar-modal-toggle:hover {
+  background: var(--bs-body-bg);
+  color: var(--ngp-blue);
+  opacity: initial;
 }
 
 .button {
@@ -483,14 +497,17 @@ button[type=submit]:hover {
 }
 
 .inactive {
-  background: var(--bs-body-bg);
-  color: var(--bs-body-color);
+  background: var(--bs-btn-disabled-bg);
+  border-color: var(--bs-btn-disabled-border-color);
+  color: var(--bs-btn-disabled-color);
   cursor: initial;
+  pointer-events: all !important;
   opacity: var(--bs-btn-disabled-opacity);
 }
 .inactive:focus, .inactive:hover {
-  background: var(--bs-body-bg);
-  color: var(--bs-body-color);
+  background: var(--bs-btn-disabled-bg);
+  color: var(--bs-btn-disabled-color);
+  cursor: initial;
   opacity: var(--bs-btn-disabled-opacity);
 }
 
@@ -610,7 +627,7 @@ button[type=submit]:hover {
   display: flex;
   flex-wrap: wrap;
   font-family: var(--ngp-font-subtitle);
-  font-size: 1.1rem;
+  font-size: var(--ngp-body-font-size-sm);
   justify-content: end;
 }
 .browse-controls .pagination {
@@ -640,6 +657,16 @@ button[type=submit]:hover {
 }
 .browse-controls .pagination-buttons .button:focus, .browse-controls .pagination-buttons .button:hover {
   color: var(--bs-btn-hover-color);
+}
+.browse-controls .pagination-buttons .button.inactive {
+  background: var(--bs-btn-disabled-bg);
+  border-color: var(--bs-btn-disabled-color);
+  color: var(--bs-btn-disabled-color);
+  opacity: var(--bs-btn-disabled-opacity);
+}
+.browse-controls .pagination-buttons .button.inactive:focus, .browse-controls .pagination-buttons .button.inactive:hover {
+  border-color: var(--bs-btn-disabled-color);
+  color: var(--bs-btn-disabled-color);
 }
 .browse-controls .row-count {
   align-self: center;
@@ -728,7 +755,7 @@ button[type=submit]:hover {
   width: 100%;
 }
 .faceted-browse-page#body-wrapper #section-content table tr td .resource-link span {
-  font-size: 1.1rem;
+  font-size: var(--ngp-body-font-size-sm);
   margin-top: 12px;
 }
 .faceted-browse-page#body-wrapper #section-content table tr td .resource-link img {
@@ -737,9 +764,6 @@ button[type=submit]:hover {
   margin: 0 auto;
   max-height: initial;
   max-width: 204px;
-}
-.faceted-browse-page#body-wrapper #section-content table tr td .resource-link td:nth-child(1) {
-  background: purple;
 }
 
 @media screen and (min-width: 40em) {
@@ -768,15 +792,15 @@ button[type=submit]:hover {
   --ngp-light-blue: #dcedfb;
   --ngp-gray:#9FA3A6;
   --ngp-light-gray: #ceccd2;
-  --ngp-font-subtitle: "open-sans", "Open Sans", Arial, sans-serif;
+  --ngp-font-subtitle: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --ngp-font-slab-serif: "cordale", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --ngp-font-size-h1: 2.625rem;
-  --ngp-font-size-h2: 2.125rem;
-  --ngp-font-size-h3: 1.75rem;
-  --ngp-font-size-h4: 1.5rem;
+  --ngp-font-size-h1: 3rem;
+  --ngp-font-size-h2: 2.5rem;
+  --ngp-font-size-h3: 2rem;
+  --ngp-font-size-h4: 1.75rem;
   --bs-body-font-size: 1.25rem;
   --bs-body-font-size-sm: 1.1rem;
-  --bs-font-sans-serif: "open-sans", "Open Sans", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-sans-serif: "Open Sans", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-serif: Georgia, "Times New Roman", Times, serif;
   --bs-body-font-family: var(--bs-font-serif);
   --bs-body-color: #333;

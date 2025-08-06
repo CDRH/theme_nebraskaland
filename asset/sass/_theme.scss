@@ -140,6 +140,7 @@ Header
     display: block;
     font-family: var(--ngp-font-subtitle);
     font-size: 1.5rem;
+    font-weight: 600;
     position: relative;
     text-transform: uppercase;
     z-index: 200;
@@ -167,7 +168,7 @@ Header
 
   .top-menu .navbar {
     border: 1px solid #090909;
-    font-size: 1.1rem;
+    font-size: var(--ngp-body-font-size-sm);
 
     .navbar-nav {
       --bs-nav-link-padding-y: 5px;
@@ -486,7 +487,7 @@ Footer
 select { // match bootstrap .form-select
   --bs-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
   padding: .375rem 2.25rem .375rem .75rem;
-  font-size: 1.1rem; // adjusted from 1rem
+  font-size: var(--ngp-body-font-size-sm); // adjusted from 1rem
   font-weight: 400;
   line-height: 1.5;
   color: var(--bs-body-color);
@@ -528,23 +529,45 @@ button[type='submit'] {
     background: var(--bs-btn-hover-bg);
     border-color: var(--bs-btn-hover-border-color);
     color: var(--bs-btn-hover-color);
+    opacity: initial;
   }
 }
+
+// Dark blue with inverse hover instead
+
+#section-sidebar-modal-toggle {
+    background: var(--ngp-blue);
+    border: 3px solid var(--ngp-blue);
+    color: white;
+    font-weight: 700;
+
+    &:focus,
+    &:hover {
+      background: var(--bs-body-bg);
+      color: var(--ngp-blue);
+      opacity: initial;
+    }
+}
+
+
 
 .button {
   border-radius: var(--bs-border-radius);
 }
 
 .inactive {
-  background: var(--bs-body-bg);
-  color: var(--bs-body-color);
+  background: var(--bs-btn-disabled-bg);
+  border-color: var(--bs-btn-disabled-border-color);
+  color: var(--bs-btn-disabled-color);
   cursor: initial;
+  pointer-events: all !important;
   opacity: var(--bs-btn-disabled-opacity);
 
   &:focus,
   &:hover {
-    background: var(--bs-body-bg);
-    color: var(--bs-body-color);
+    background: var(--bs-btn-disabled-bg);
+    color: var(--bs-btn-disabled-color);
+    cursor: initial;
     opacity: var(--bs-btn-disabled-opacity);
   }
 }
@@ -702,7 +725,7 @@ button[type='submit'] {
   display: flex;
   flex-wrap: wrap;
   font-family: var(--ngp-font-subtitle);
-  font-size: 1.1rem;
+  font-size: var(--ngp-body-font-size-sm);
   justify-content: end;
 
   .pagination {
@@ -733,10 +756,22 @@ button[type='submit'] {
       display: inline-block;
       font-size: 1.5rem;
       padding: 0.375rem 0.625rem;
+        &:focus,
+        &:hover {
+          color: var(--bs-btn-hover-color);
+        }
 
-      &:focus,
-      &:hover {
-        color: var(--bs-btn-hover-color);
+      &.inactive {
+        background: var(--bs-btn-disabled-bg);
+        border-color: var(--bs-btn-disabled-color);
+        color: var(--bs-btn-disabled-color);
+        opacity: var(--bs-btn-disabled-opacity);
+
+        &:focus,
+        &:hover {
+          border-color: var(--bs-btn-disabled-color);
+          color: var(--bs-btn-disabled-color);
+        }
       }
     }
   }
@@ -847,7 +882,7 @@ button[type='submit'] {
           }
           
           span {
-            font-size: 1.1rem;
+            font-size: var(--ngp-body-font-size-sm);
             margin-top: 12px;
           }
 
@@ -857,10 +892,6 @@ button[type='submit'] {
             margin: 0 auto;
             max-height: initial;
             max-width: 204px;
-          }
-
-          td:nth-child(1) {
-            background: purple;
           }
         }
       }
@@ -884,15 +915,3 @@ button[type='submit'] {
     }
   }
 }
-
-// Direct override of result title width limits
-// .block-facetedBrowsePreview #main_content,
-// .faceted-browse-page #main_content #section-content {
-//    table {
-//     .resource-link,
-//     img + .resource-name {
-//       max-width: initial;
-//       min-width: initial;
-//     }
-//   }
-// }
