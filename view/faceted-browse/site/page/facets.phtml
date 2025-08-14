@@ -31,7 +31,14 @@
             data-facet-type="<?php echo $this->escapeHtml($facet->type()); ?>"
             data-facet-data="<?php echo $this->escapeHtml(json_encode($facet->data())); ?>">
             <legend><?php echo $facet->name(); ?></legend>
-            <?php echo $this->facetedBrowse()->renderFacet($facet); ?>
+              <?php if ($facet->type() == "full_text"): ?>
+                <label>
+                  <span class="sr-only"><?php echo $facet->name(); ?></span>
+                  <?php echo $this->facetedBrowse()->renderFacet($facet); ?>
+                </label>
+              <?php else: ?>
+                <?php echo $this->facetedBrowse()->renderFacet($facet); ?>
+              <?php endif; ?>
         </fieldset>
         <?php endif; ?>
         <?php endforeach; ?>
