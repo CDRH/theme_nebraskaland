@@ -18,8 +18,20 @@
     }
     ?>
     <?php if ($helperText): ?>
-    <a id="helper-text-expand-collapse" class="button collapse" href="#"" aria-expanded="false"><?php echo $this->escapeHtml($helperTextButtonLabel); ?> </a>
-    <div id="helper-text" class="collapsible" aria-labelledby="helper-text-expand-collapse"><?php echo $category->helperText(); ?></div>
+      <div class="instructions-wrapper accordion" id="instructionsAccordion">
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#instructionsText" aria-expanded="true" aria-controls="instructionsText">
+              <?php echo $this->escapeHtml($helperTextButtonLabel); ?>
+            </button>
+          </div>
+          <div id="instructionsText" class="accordion-collapse collapse show" data-bs-parent="#instructionsAccordion">
+            <div class="accordion-body">
+              <?php echo $category->helperText(); ?>
+            </div>
+          </div>
+        </div>
+      </div>
     <?php endif; ?>
     <div id="facets"
         data-category-id="<?php echo $this->escapeHtml($category->id()); ?>"
