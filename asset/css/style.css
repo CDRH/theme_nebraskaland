@@ -363,12 +363,12 @@ because Omeka S base uses it */
 @media screen {
   .item.resource.show {
     --ngp-font-size-h3: 2rem;
-    --bs-body-font-size: 1.13rem;
+    --ngp-body-font-size: 1.13rem;
   }
   .item.resource.show h1 {
     font-size: 3.5rem;
     margin-bottom: 0px;
-    margin-top: 40px;
+    margin-top: 3rem;
     text-align: center;
   }
   .item.resource.show .h2.item-date {
@@ -451,6 +451,7 @@ select {
 #section-sidebar-modal-toggle,
 #section-sidebar-modal-close,
 button[type=submit] {
+  --bs-btn-disabled-bg: var(--bs-body-bg);
   background: var(--bs-btn-bg);
   border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
   border-radius: 0;
@@ -513,7 +514,8 @@ button[type=submit]:hover {
 
 .faceted-browse-wrapper {
   font-size: var(--ngp-body-font-size);
-  padding-top: 40px;
+  margin-bottom: 2rem;
+  padding-top: 3rem;
 }
 .faceted-browse-wrapper .facets-container {
   font-family: var(--ngp-font-subtitle);
@@ -532,20 +534,18 @@ button[type=submit]:hover {
   width: 1px;
 }
 .faceted-browse-wrapper #helper-text-expand-collapse {
-  background: var(--bs-btn-bg);
+  background-color: var(--bs-btn-bg);
   border: 1px solid var(--bs-btn-border-color);
   border-radius: 0px;
   color: var(--bs-btn-color);
-  display: block;
+  display: flex;
   margin-bottom: 0px;
   padding: 0.75rem;
   text-align: left;
   text-decoration: none;
 }
 .faceted-browse-wrapper #helper-text-expand-collapse:hover {
-  background: var(--ngp-blue);
-  border-color: var(--ngp-blue);
-  color: white;
+  background-color: rgb(162, 196, 225);
 }
 .faceted-browse-wrapper #helper-text-expand-collapse:after {
   background-image: var(--bs-accordion-btn-icon);
@@ -587,7 +587,7 @@ button[type=submit]:hover {
   color: var(--bs-btn-color);
   border-radius: var(--bs-btn-border-radius);
   display: inline-block;
-  font-size: var(--bs-body-font-size-sm);
+  font-size: var(--ngp-body-font-size-sm);
   margin-top: 0.5rem;
   padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
   text-decoration: none;
@@ -640,7 +640,7 @@ button[type=submit]:hover {
   margin-right: 1rem;
 }
 .browse-controls .pagination form input {
-  border: 1px solid var(--bs-border-color);
+  border: 1px solid var(--ngp-light-gray);
   border-radius: 0;
   height: 100%;
   padding-left: 0;
@@ -660,7 +660,7 @@ button[type=submit]:hover {
 }
 .browse-controls .pagination-buttons .button.inactive {
   background: var(--bs-btn-disabled-bg);
-  border-color: var(--bs-btn-disabled-color);
+  border-color: var(--bs-btn-disabled-border-color);
   color: var(--bs-btn-disabled-color);
   opacity: var(--bs-btn-disabled-opacity);
 }
@@ -691,27 +691,21 @@ button[type=submit]:hover {
 }
 .browse-controls form.sorting {
   display: flex;
-  flex-wrap: wrap;
   gap: 10px 5px;
   justify-content: end;
 }
 
-@media screen and (min-width: 40em) {
-  .browse-controls {
-    justify-content: space-between;
-  }
-  .browse-controls form.sorting {
-    margin-left: auto;
-  }
-}
-.faceted-browse-page#body-wrapper > .container {
+.faceted-browse-page#body-wrapper main#content > div.container {
   max-width: initial !important;
+  padding-left: 0;
+  padding-right: 0;
 }
 .faceted-browse-page#body-wrapper .tablesaw-bar .tablesaw-advance {
   display: none;
 }
 .faceted-browse-page#body-wrapper #section-content table {
-  margin-top: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
 }
 .faceted-browse-page#body-wrapper #section-content table thead {
   border: 0;
@@ -767,8 +761,57 @@ button[type=submit]:hover {
 }
 
 @media screen and (min-width: 40em) {
-  .faceted-browse-page#body-wrapper #section-sidebar {
-    padding-right: 2rem;
+  .browse-controls {
+    justify-content: space-between;
+  }
+  .browse-controls a.permalink.button {
+    order: 3;
+  }
+  .browse-controls form.sorting {
+    margin-left: auto;
+  }
+  .faceted-browse-page#body-wrapper #section-content table {
+    margin-top: 1rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .site-title {
+    font-size: 3.5rem;
+  }
+  h1, .h1 {
+    font-size: 2.25rem;
+  }
+  .random-background-image .caption {
+    font-size: var(--ngp-body-font-size-sm);
+    margin-left: var(--bs-gutter-x);
+    margin-right: var(--bs-gutter-x);
+  }
+  #footer {
+    font-size: var(--ngp-body-font-size-sm);
+  }
+  #footer .footer-logos {
+    padding: 1rem 1rem 2rem 1rem;
+  }
+  #footer .footer-logos a img {
+    max-width: 75%;
+  }
+  #footer .footer-logos a[href~="cdrh.unl.edu"] img {
+    max-width: 100%;
+  }
+  .browse-controls,
+  .browse-controls select,
+  .browse-controls .button:not(.previous):not(.next),
+  .browse-controls form.sorting button {
+    font-size: 1rem !important;
+  }
+  .browse-controls {
+    justify-content: start;
+  }
+  .browse-controls a.permalink.button {
+    margin-left: initial;
+  }
+  .browse-controls form.sorting {
+    justify-content: start;
   }
 }
 @media screen and (min-width: 768px) {
@@ -798,8 +841,8 @@ button[type=submit]:hover {
   --ngp-font-size-h2: 2.5rem;
   --ngp-font-size-h3: 2rem;
   --ngp-font-size-h4: 1.75rem;
-  --bs-body-font-size: 1.25rem;
-  --bs-body-font-size-sm: 1.1rem;
+  --ngp-body-font-size: 1.25rem;
+  --ngp-body-font-size-sm: 1.1rem;
   --bs-font-sans-serif: "Open Sans", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-serif: Georgia, "Times New Roman", Times, serif;
   --bs-body-font-family: var(--bs-font-serif);
@@ -815,7 +858,7 @@ button[type=submit]:hover {
   --bs-btn-padding-x: 0.75rem;
   --bs-btn-padding-y: 0.5rem;
   --bs-btn-font-family: var(--ngp-font-subtitle);
-  --bs-btn-font-size: var(--ngp-body-font-size);
+  --bs-btn-font-size: var(--ngp-body-font-size-sm);
   --bs-btn-font-weight: 500;
   --bs-btn-line-height: 1;
   --bs-btn-color: var(--bs-body-color);
@@ -828,8 +871,31 @@ button[type=submit]:hover {
   --bs-btn-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15),0 1px 1px rgba(0, 0, 0, 0.075);
   --bs-btn-disabled-opacity: 0.65;
   --bs-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb), .5);
+  --bs-btn-disabled-border-color: var(--bs-gray-500);
+  --bs-btn-disabled-color: var(--bs-gray-600);
   --ngp-btn-sm-padding-x: 0.5rem;
   --ngp-btn-sm-padding-y: 0.25rem;
+  --bs-accordion-color: var(--bs-body-color);
+  --bs-accordion-bg: var(--bs-body-bg);
+  --bs-accordion-transition: color 0.15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out,border-radius 0.15s ease;
+  --bs-accordion-border-color: var(--bs-border-color);
+  --bs-accordion-border-width: var(--bs-border-width);
+  --bs-accordion-border-radius: var(--bs-border-radius);
+  --bs-accordion-inner-border-radius: calc(var(--bs-border-radius) - (var(--bs-border-width)));
+  --bs-accordion-btn-padding-x: 1.25rem;
+  --bs-accordion-btn-padding-y: 1rem;
+  --bs-accordion-btn-color: var(--bs-body-color);
+  --bs-accordion-btn-bg: var(--bs-accordion-bg);
+  --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23212529' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  --bs-accordion-btn-icon-width: 1.25rem;
+  --bs-accordion-btn-icon-transform: rotate(-180deg);
+  --bs-accordion-btn-icon-transition: transform 0.2s ease-in-out;
+  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23052c65' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  --bs-accordion-body-padding-x: 1.25rem;
+  --bs-accordion-body-padding-y: 1rem;
+  --bs-accordion-active-color: var(--bs-primary-text-emphasis);
+  --bs-accordion-active-bg: var(--bs-primary-bg-subtle);
 }
 
 /*# sourceMappingURL=style.css.map */

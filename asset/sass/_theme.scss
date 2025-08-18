@@ -392,12 +392,12 @@ Footer
 @media screen {
   .item.resource.show {
     --ngp-font-size-h3: 2rem;
-    --bs-body-font-size: 1.13rem;
+    --ngp-body-font-size: 1.13rem;
 
     h1 {
       font-size: 3.5rem;
       margin-bottom: 0px;
-      margin-top: 40px;
+      margin-top: 3rem;
       text-align: center;
     }
 
@@ -508,6 +508,7 @@ select { // match bootstrap .form-select
 #section-sidebar-modal-toggle, // Filters button on Faceted Browse
 #section-sidebar-modal-close, 
 button[type='submit'] {
+  --bs-btn-disabled-bg: var(--bs-body-bg);
   background: var(--bs-btn-bg);
   border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
   border-radius: 0;
@@ -549,8 +550,6 @@ button[type='submit'] {
     }
 }
 
-
-
 .button {
   border-radius: var(--bs-border-radius);
 }
@@ -575,7 +574,8 @@ button[type='submit'] {
 
 .faceted-browse-wrapper {
   font-size: var(--ngp-body-font-size);
-  padding-top: 40px;
+  margin-bottom: 2rem;
+  padding-top: 3rem;
   
   .facets-container {
     font-family: var(--ngp-font-subtitle);
@@ -599,20 +599,18 @@ button[type='submit'] {
   }
 
   #helper-text-expand-collapse { // Instructions
-    background: var(--bs-btn-bg);
+    background-color: var(--bs-btn-bg);
     border: 1px solid var(--bs-btn-border-color);
     border-radius: 0px;
     color: var(--bs-btn-color);
-    display: block;
+    display: flex;
     margin-bottom: 0px;
     padding: 0.75rem;
     text-align: left;
     text-decoration: none;
 
       &:hover {
-        background: var(--ngp-blue);
-        border-color: var(--ngp-blue);
-        color: white;
+        background-color: rgb(162, 196, 225);
       }
 
       &:after {
@@ -663,7 +661,7 @@ button[type='submit'] {
     color: var(--bs-btn-color);
     border-radius: var(--bs-btn-border-radius);
     display: inline-block;
-    font-size: var(--bs-body-font-size-sm);
+    font-size: var(--ngp-body-font-size-sm);
     margin-top: 0.5rem;
     padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
     text-decoration: none;
@@ -738,7 +736,7 @@ button[type='submit'] {
       margin-right: 1rem;
 
       input {
-        border: 1px solid var(--bs-border-color);
+        border: 1px solid var(--ngp-light-gray);
         border-radius: 0;
         height: 100%;
         padding-left: 0;
@@ -763,7 +761,7 @@ button[type='submit'] {
 
       &.inactive {
         background: var(--bs-btn-disabled-bg);
-        border-color: var(--bs-btn-disabled-color);
+        border-color: var(--bs-btn-disabled-border-color);
         color: var(--bs-btn-disabled-color);
         opacity: var(--bs-btn-disabled-opacity);
 
@@ -804,26 +802,18 @@ button[type='submit'] {
 
   form.sorting {
     display: flex;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     gap: 10px 5px;
     justify-content: end;
   }
 }
 
-@media screen and (min-width: 40em) {
-  .browse-controls {
-    justify-content: space-between;
-
-    form.sorting {
-      margin-left: auto;
-    }
-  }
-}
-
 .faceted-browse-page#body-wrapper {
 
-  > .container {
+  main#content > div.container {
     max-width: initial !important; // make nested container-lg work
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .tablesaw-bar .tablesaw-advance {
@@ -833,7 +823,9 @@ button[type='submit'] {
   // Results
 
   #section-content table {
-    margin-top: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+
     thead {
       // sr-only
       border: 0;
@@ -900,8 +892,70 @@ button[type='submit'] {
 }
 
 @media screen and (min-width: 40em) {
-  .faceted-browse-page#body-wrapper #section-sidebar {
-    padding-right: 2rem;
+  .browse-controls {
+    justify-content: space-between;
+
+    a.permalink.button {
+    order: 3;
+  }
+    form.sorting {
+      margin-left: auto;
+    }
+  }
+
+  .faceted-browse-page#body-wrapper #section-content table {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .site-title {
+    font-size: 3.5rem;
+  }
+
+  h1, .h1 {
+    font-size: 2.25rem;
+  }
+
+  .random-background-image .caption {
+    font-size: var(--ngp-body-font-size-sm);
+    margin-left: var(--bs-gutter-x);
+    margin-right: var(--bs-gutter-x);
+  }  
+
+  #footer {
+    font-size: var(--ngp-body-font-size-sm);
+
+    .footer-logos {
+      padding: 1rem 1rem 2rem 1rem;
+
+      a img {
+        max-width: 75%;
+      }
+      
+      a[href~="cdrh.unl.edu"] img {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .browse-controls,
+  .browse-controls select,
+  .browse-controls .button:not(.previous):not(.next),
+  .browse-controls form.sorting button {
+    font-size: 1rem !important;
+  }
+  
+  .browse-controls {
+    justify-content: start;
+
+    a.permalink.button {
+      margin-left: initial;
+    }
+
+    form.sorting {
+      justify-content: start;
+    }
   }
 }
 
