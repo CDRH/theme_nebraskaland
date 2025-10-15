@@ -12,7 +12,13 @@ $valueLang = $filterLocale ? [$lang, ''] : null;
   <div class="h2 item-date"><?php echo $item->value('dcterms:date'); ?></div>
 <?php endif; ?>
 <!-- <h2><?php // echo $translate('Item'); ?></h2> -->
- 
+
+<?php // if ($resource->media()):
+  // $thumbnail = $resource->primaryMedia(); 
+?>
+<?php // echo $thumbnail->linkPretty('medium', null, null, $valueLang); ?>
+<?php // endif; ?>
+
 <?php 
 if ($resource->media()): 
   $resourceMedia = $resource->media(); 
