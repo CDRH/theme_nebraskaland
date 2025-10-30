@@ -420,10 +420,10 @@ Header
     max-height: 120px;
   }
   .item.resource.show #metadata-values {
-    border: solid 2px #a7a4ae;
+    border-top: solid 2px #a7a4ae;
     clear: both;
-    margin-top: 3rem;
-    padding: 2rem 4rem;
+    margin-top: 4rem;
+    padding-top: 4rem;
   }
   .item.resource.show #metadata-values dt, .item.resource.show #metadata-values dd {
     display: inline;
@@ -431,6 +431,17 @@ Header
   .item.resource.show #metadata-values > .property {
     display: list-item;
     list-style-type: disc;
+    margin-left: 3rem;
+  }
+  .item.resource.show #metadata-values > .property.extracted-text {
+    border-top: solid 2px #a7a4ae;
+    list-style-type: none;
+    margin-left: 0;
+    margin-top: 4rem;
+    padding-top: 4rem;
+  }
+  .item.resource.show #metadata-values > .property.extracted-text > dt {
+    display: none;
   }
   .item.resource.show .tei_ab, .item.resource.show .tei_byline, .item.resource.show .tei_fw {
     display: block;

@@ -474,10 +474,10 @@ Footer
     // Metadata box
 
     #metadata-values {
-      border: solid 2px #a7a4ae;
+      border-top: solid 2px #a7a4ae;
       clear: both;
-      margin-top: 3rem;
-      padding: 2rem 4rem;
+      margin-top: 4rem;
+      padding-top: 4rem;
       
       dt, dd {
         display: inline;
@@ -486,6 +486,19 @@ Footer
       > .property {
         display: list-item;
         list-style-type: disc;
+        margin-left: 3rem;
+
+        &.extracted-text {
+          border-top: solid 2px #a7a4ae;
+          list-style-type: none;
+          margin-left: 0;
+          margin-top: 4rem;
+          padding-top:4rem;
+
+          > dt {
+            display: none;
+          }
+        }
       }
     }
 
@@ -1168,6 +1181,8 @@ dl.media-list .property {
       word-break: break-word;
     }
   }
+
+
 
 
 }
