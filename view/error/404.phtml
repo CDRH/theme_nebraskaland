@@ -1,0 +1,36 @@
+<?php
+$translate = $this->plugin('translate');
+?>
+
+<div class="block block-pageTitle">
+<?php if ($this->themeSetting('404_title')): ?>
+  <h1><?php echo $this->themeSetting($translate('404_title')); ?></h1>
+<?php else: ?>
+  <?php echo $this->pageTitle($translate('Page not found')); ?>
+<?php endif; ?>
+</div>
+
+<div class="block block-html">
+  <?php if ($this->themeSetting('404_text')): ?>
+    <?php echo $this->themeSetting('404_text'); ?>
+  <?php else: ?>
+    <p>
+      <?php echo $translate('The page you are trying to view does not exist. Use the back button to return to the last page.'); ?>
+    </p>
+  <?php endif; ?>
+
+  <?php if (ini_get('display_errors')): ?>
+    <?php if (isset($this->message)): ?>
+      <p><?php echo $this->message; ?></p>
+    <?php endif; ?>
+
+    <?php if (isset($this->reason)): ?>
+      <p><?php echo sprintf($translate('Reason: %s'), "<tt>$this->reason</tt>"); ?></p>
+    <?php endif; ?>
+
+    <?php if ($this->exception): ?>
+      <pre><?php echo $this->exception; ?></pre>
+    <?php endif; ?>
+  <?php endif; ?>
+
+</div>
