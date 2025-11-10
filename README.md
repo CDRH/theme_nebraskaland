@@ -1,2 +1,284 @@
 # Nebraskaland Omeka S Theme
-Omeka S theme for migrated Nebraskaland Digital Archive.
+This is a custom Omeka S theme for the [Nebraskaland Digital Archive](https://nebraskaland.unl.edu/). This theme was created by the [Center of Digital Research in the Humanities](https://cdrh.unl.edu/) at the [University of Nebraska–Lincoln](https://www.unl.edu/) to carry over the Nebraskaland Digital Archive design when it was migrated from Ruby on Rails to Omeka S.
+
+## Theme Modules
+
+This theme works with several Omeka S Modules to build a more robust user experience. Some of these modules are required for the theme to work as intended, while others are "supported" by the theme in that this theme provides styling and layout for the module's features.
+
+### Required Modules
+
+  - [Common](https://omeka.org/s/modules/Common/): adds internal features on which most other modules are dependent.
+  - [CSSEditor](https://omeka.org/s/modules/CSSEditor/): required for adding/editing CSS through the Omeka S admin interface, without going into the theme files every time.
+
+### Themed Modules
+The Nebraskaland theme includes styles for the following modules, but they are not required for the theme to function correctly.
+
+  - [Faceted Browse](https://omeka.org/s/modules/FacetedBrowse/): the theme modifies fonts, colors, and spacing on the page, as well as restyling the table of results to appear as an image gallery.
+  - [OctopusViewer](https://github.com/biblibre/omeka-s-module-OctopusViewer): code in the CSS Editor module adds some space between the PDF viewer and other elements on the page, and hides the PDF viewer when an issue does not have a PDF version.
+
+## Installing the Theme
+
+**If the theme is already installed**, you can select it from the list of installed themes following the [Select a Theme documentation](https://omeka.org/s/docs/user-manual/sites/site_theme/) in the Omeka S User Manual.
+
+**If the site is moved to new hosting or a new Omeka S instance**, the theme may need to be installed again. To install the theme, [download this GitHub repository](https://docs.github.com/en/get-started/start-your-journey/downloading-files-from-github#downloading-a-repositorys-files) as a `.zip` file and follow the instructions in the [Omeka S User Manual](https://omeka.org/s/docs/user-manual/sites/site_theme/) to install it. Modules may also need to be installed again. **Most importantly**, most of the site content and settings are controlled through the Omeka S admin interface—not through the theme folder—and as such will need to be copied over manually. Omeka S themes contain only the basic visual design of the site (colors, fonts, layout, and templates).
+
+The CSS Editor module also contains some theme styles (hiding certain elements, for example) so that they can be modified without going into the theme folder. If the theme has to be (re)installed, the contents of the CSS Editor will need to be copied over manually. To copy the CSS Editor code to a new installation: 
+    1. [Install and activate](https://omeka.org/s/docs/user-manual/modules/#installing-modules) the [CSS Editor module](https://omeka.org/s/modules/CSSEditor/) for the new install, if you haven't already.
+    2. Go to your site in the admin interface, and in the sidebar, click "CSS Editor."
+    3. Copy the CSS code from the old site, or from the [css-editor/css-editor-backup.css](https://github.com/CDRH/theme_nebraskaland/blob/main/css-editor/css-editor-backup.css) file in this GitHub repository.
+    4. Paste the copied CSS into the "CSS Editor" box.
+    5. Click "Save."
+
+## Designing a Site with this Theme
+
+The first and best resource for editing an Omeka S site is the [Omeka S User Manual](https://omeka.org/s/docs/user-manual/). This is theme-agnostic and covers the all the things you can do as an Omeka S site admin or editor.
+
+Since this theme is built on Bootstrap version 5.3, you can also refer to the official [Bootstrap 5.3 documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/) for available CSS classes and variables, as well as HTML elements like cards and buttons.
+
+The information you will find in this README is specific to this theme and its customizations of Bootstrap 5.3.
+
+## Theme Settings
+
+Theme settings are accessed from the site admin interface. To edit theme settings, go to Sites > Nebraskaland Digital Archive > Themes, and under the theme name, click  the Edit theme settings button.
+
+The couple of the settings for this theme are [carryovers from the Default theme](https://github.com/omeka-s-themes/default?tab=readme-ov-file#theme-configuration):
+
+- **Top navigation depth:** 1
+  - This setting controls how many navigation levels to display. _This does not affect the top menu_, only the main menu below the banner.
+  - Setting this to '0' shows all levels. It's okay to leave this at zero, but as of 2025, the Nebraskaland Digital Archive site has only ever had 1 level of navigation (e.g. no subpages/submenu/child pages). This theme works best with a maximum of 2 levels for Top navigation depth. To edit the navigation, go to Sites > Nebraskaland Digital Archive > Navigation.
+- **Logo:** [No asset selected]
+  - Upload an image asset to use as a logo in place of a text site title. This is currently blank, as the logo is currently created with real text rather than an image (and this is preferable for accessibility reasons).
+- **Banner**: the header image that appears behind the Nebraskaland logo should be uploaded and selected here. 
+- **Truncate Body Property:** Show full value
+  - Controls the size of the body property of resources in a browseable list. It can be set to show the full value, truncate after 4 lines and fade out, or truncate after 4 lines and clip with an ellipsis.
+- **Top Menu Links**
+  - These options control the menu at the very top of the page, above the header image. As of 2025, there are 3 links in that menu, to match the Rails site design: [Nebraskaland Magazine](http://magazine.outdoornebraska.gov/), [Subscribe](http://magazine.outdoornebraska.gov/subscribe-renew/), and [Current Issue](http://magazine.outdoornebraska.gov/digital/).
+
+The other settings in this theme control the content that appears in the footer of every page.
+
+### Footer text
+
+There are 4 spaces in this theme's footer to add text. These fields also support HTML content so that you can add links and HTML tags as needed.
+
+  - **Footer Content** is the HTML/text that appears first in the footer, before any logos.
+    - Supports HTML so that paragraphs and links can be included (as well as other HTML elements, if necessary).
+    - The copyright year, displayed in the footer, is part of this HTML/text and does not automatically update. To edit the year, edit the text in Footer Content box and save your changes.
+
+### Footer Logos
+
+The theme supports up to 5 logos for project partners, grantors, or other supporting organizations. If more than 5 logos become necessary in the future, consider adding a page to the About pages called "Support" or something similar and displaying them there.
+
+For each logo, there is a place to upload and/or select an image, and a place to enter the URL the logo should link to when clicked. Both are technically optional, but providing a link without an image will make the visual layout look strange.
+
+#### Adding a footer logo image
+
+Only [Assets](https://omeka.org/s/docs/user-manual/admin/assets/#add-an-asset) can be used for logo images, not Items or Media. 
+
+To add (or change) a logo in the footer, you can select an already-uploaded asset, or follow the instructions below. **Make sure all logo images have alt text.**
+
+To add a logo image that has **not** already been uploaded as an Asset:
+
+  1. On the "Edit theme settings" page, go to the Footer Logo # field (1, 2, or 3) and click "Select."
+  2. Follow the instructions to [Add an asset in Omeka S](https://omeka.org/s/docs/user-manual/admin/assets/#add-an-asset).
+  3. **Alt text is required for ADA Title II web compliance.** It's easiest to enter the alt text before you click "Upload."
+  4. Do not check the box for "Optimize size for web" if your image has a transparent background (like a PNG). It is okay to do so for JPEGs.
+  5. Click "Upload."
+  6. The Asset has now been uploaded. Find it in the list under "Select asset" and click to select it.
+  7. If you want the image to be a link (e.g. have the Mellon logo take users to the Mellon website when they click it), paste the full URL in the corresponding "Footer Logo # Link" field.
+  7. Save your changes using the "Save" button in the top right corner of the page.
+
+To add a logo image that has **already** been uploaded as an Asset:
+
+  1. Make sure the Asset has alt text first. To do this, follow the instructions to [Edit an asset in Omeka S](https://omeka.org/s/docs/user-manual/admin/assets/#edit-an-asset); if the Alt Text field is empty, add alt text and click "Save".
+  2. On the "Edit theme settings" page, go to the Footer Logo # field (1, 2, or 3) and click "Select."
+  3. Find the image in the list under "Select asset" and click to select it.
+  4. If you want the image to be a link (e.g. have the Mellon logo take users to the Mellon website when they click it), paste the full URL in the corresponding "Footer Logo # Link" box.
+  5. Save your changes using the "Save" button in the top right corner of the page.
+
+#### Changing a footer logo image
+
+To replace an old logo image with a new one, go to the Footer Logo # field with the logo you want to replace and follow the instructions for [Adding a logo image](#adding-a-logo-image). You do not need to "Clear" the old image before selecting a new one (though it's okay if you do).
+
+#### Changing a footer logo link
+
+You can add, remove, or change a footer logo link at any time. You do not need to do anything to the logo image(s) to make changes to the Footer Logo # Link fields.
+
+#### Removing a footer logo image
+
+To remove a logo image: 
+
+  1. On the "Edit theme settings" page, go to the relevant Footer Logo # field (1, 2, or 3) and under the logo thumbnail, click "Clear."
+  2. Delete the URL in the corresponding Footer Logo # Link field, if there is one.
+  3. Save your changes using the "Save" button in the top right corner of the page.
+
+### Customize the "404: Page Not Found" message
+
+The 404 Page Title and Custom Text boxes allow you to customize the error page users will see if they try to view a page on the site that doesn't exist. (You can see this in action at any nonexistant URL, such as https://nebraskaland.unl.edu/blahblahblah.)
+
+## Configure resource pages
+
+As of August 2025, this theme works best with the following Resource page block layouts. To check and/or edit these, follow the Omeka S [Configure resource pages documentation](https://omeka.org/s/docs/user-manual/sites/site_theme/#configure-resource-pages).
+
+### Configure resource pages
+
+As of November 2025, the theme has the resource pages configured as follows (to edit these settings, go to 
+
+### Item page blocks
+
+  - **Region: Main**
+    - Media embeds
+    - Values
+
+### Media page blocks
+
+  - **Region: Main**
+    - Media embeds
+    - Values
+
+### Item Set page blocks
+
+  - **Region: Main**
+    - Linked resources
+    - Values
+
+### Hidden Elements
+
+With the launch of the Equality Before the Law site in 2025, we chose to hide a variety of elements (such as image thumbnails or metadata field labels) with `display: none` in the CSS Editor rather than by overriding PHP in the base Omeka S files. This means that to _unhide_ any of those elements, all you need to do is find the relevant code in the CSS Editor and delete it. We recommend using this method any time you need to hide an element due to the CSS Editor's ease of use.
+
+Deleting the following code from the CSS Editor, for example, will make image thumbnails visible again site-wide:
+
+```
+.resource-link img,
+.media-embed img {
+  display: none !important;
+}
+```
+
+## Omeka S Page blocks
+
+The Omeka S Page editor allows you to apply CSS classes in its block layout UI. This can be a huge help when it comes to applying specific styles on Pages. (As of 2025, this is not possible for resource pages, i.e. Item page, Media page, or Item Set page).
+
+### Page Title block
+
+Every page must have a Heading 1 (`<h1>`) to meet ADA Title II requirements. When editing pages, this is most easily accomplished with the **Page title block**, which displays the page title as an `<h1>`. When you create a page, it should already be added as a block.
+
+### Homepage Images block
+
+TBD
+
+## Module settings
+
+### Faceted Browse
+
+As of November 2025, the `/browse` page has been set up using the following options. To (re)create the exact same Faceted Browse page, go to Sites > Nebraskaland Digital Archive > Faceted Browse.
+
+- Title: Browse Issues
+- Resource type: Items (selected by default)
+- Categories: Browse Issues By (click add/edit)
+  - Name:  Browse Issues By
+  - Search query (click Edit)
+    - Under Search by item set, add two queries:
+      - In: Current live issues
+      - In: To Review
+  - Default sort by: Date Issued
+  - Default sort order: Ascending
+  - Helper text: Search the full text of all digitized issues in the archive. Or select keywords to narrow down issue results. Only issues that fulfill all of the chosen keywords will appear in the results.
+  - Helper text button label: [blank]
+  - Value facet mode: Match all
+  - Facets:
+    - Full-text Search
+    - Decade
+      - Facet type: Value
+      - Facet name: Decade
+      - Property: Name of temporal position
+      - Select type: Single (dropdown menu)
+      - Query type: Contains
+      - Query type: Contains
+      - Values: See note about the "Values" text box for facets
+    - Year
+      - Facet type: Value
+      - Facet name: Year
+      - Property: Date
+      - Select type: Single (dropdown menu)
+      - Query type: Contains
+      - Values: See note about the "Values" text box for facets
+    - Season
+      - Facet type: Value
+      - Facet name: Season
+      - Property: Temporal Coverage
+      - Select type: Single (list)
+      - Query type: Contains
+      - Truncate values: [blank]
+      - Values: See note about the "Values" text box for facets
+    - Volume #
+      - Facet type: Value
+      - Facet name: Volume #
+      - Property: volume
+      - Select type: Single (dropdown menu)
+      - Query type: Is exactly
+      - Values: See note about the "Values" text box for facets
+  - Unique Issues
+      - Facet type: Value
+      - Facet name: Unique Issues
+      - Property: edition
+      - Select type: Multiple (list)
+      - Query type: Contains
+      - Truncate values: [blank]
+      - Values: See note about the "Values" text box for facets
+  - Media Format
+      - Facet type: Value
+      - Facet name: Media Format
+      - Property: Type
+      - Select type: Multiple (list)
+      - Query type: Contains
+      - Truncate values: 5
+      - Values: See note about the "Values" text box for facets
+  - Columns:
+      - Title
+        - Column type: Title (link to resource)
+        - Column name: Title
+        - Exclude sort by: [unchecked]
+      - Edition
+        - Column type: Value
+        - Column name: Edition
+        - Exclude sort by: [unchecked]
+        - Property: Dublin Core: Date
+        - Max values: 1
+      - Date Issued
+        - Column type: Value
+        - Column name: Date Issued
+        - Exclude sort by: [unchecked]
+        - Property: Dublin Core: Date Issued
+        - Max values: 1
+   
+  **Note about the "Values" text box for facets**: the list of values in this box can be quickly (re)populated by checking the box for "Show all available values," but the resulting list will often have to be re-alphabetized/put in chronological order manually. To add a new value without repopulating the list, simply add a new line of text and save your changes.
+
+### OctopusViewer Settings
+
+As of November 2025, the PDF viewer is set up using the following options. To edit these, go to Modules, find OctopusViewer in the list, and click the Configure button.
+
+- Show viewer on the item page: Before the item content
+- Show viewer on the media page: Before the media content
+- IIIF Image URI template: (blank)
+- Show media selector: Never
+- Show media info: Never
+- Default media title: No text
+- Show download link: No
+
+## Links and References
+
+### Omeka S
+  - [Omeka S](https://omeka.org/s/)
+  - [Omeka S User Manual](https://omeka.org/s/docs/user-manual/)
+  - [Omeka S Developer Documentation: Themes](https://omeka.org/s/docs/developer/themes/)
+  - [Omeka S Forums](https://forum.omeka.org/c/omeka-s/8)
+
+### Bootstrap
+  - [Bootstrap 5.3](https://getbootstrap.com/docs/5.3/getting-started/download/)
+  - [Bootstrap 5.3 Documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+
+### Accessibility
+
+  - [CDRH Accessibility Wiki](https://github.com/CDRH/accessibility)
+  - [”Fact Sheet: New Rule on the Accessibility of Web Content and Mobile Apps Provided by State and Local Governments”](https://www.ada.gov/resources/2024-03-08-web-rule/)
+  - [WebAIM Color Contrast Checker](https://webaim.org/resources/contrastchecker/)
