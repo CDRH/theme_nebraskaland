@@ -1,0 +1,66 @@
+/* Hide Universal viewer completely from this site */
+
+.universal-viewer {
+  display: none;
+}
+
+/* ///////////////////////////////////////////////////////////////
+ Hide "Resource Class" from sort options
+/////////////////////////////////////////////////////////////// */
+
+form.sorting select:first-of-type option:nth-child(2) {
+  display: none;
+}
+
+
+/* Hide extra cover images */
+
+.media-render.file {
+  display: none;
+}
+
+/* Hide Octopus Viewer if there's no PDF attachment */
+
+.item.resource.show .item-has-media:not(.application-pdf) .octopusviewer-wrapper {
+  display: none;
+}
+
+/* Hide universal viewer if it comes after HTML */
+
+.media-embeds.application-pdf .media-render.file {
+ display: none;
+}
+
+.media-embeds:not(.application-pdf) + .universal-viewer {
+  display: none;
+}
+
+header {
+  background-color:  initial;
+  width: initial;
+  min-height: initial;
+  text-align: left;
+  padding: initial;
+  color:  initial;
+}
+
+octopusviewer-viewer {
+  min-height: 425px;
+}
+
+@media screen and (min-width: 768px) {
+  octopusviewer-viewer {
+    min-height: 550px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  octopusviewer-viewer {
+    min-height: 725px;
+  }
+}
+
+.item.resource.show .container h2:first-of-type + h3, 
+.item.resource.show .media-list img {
+  display: none !important;
+}
