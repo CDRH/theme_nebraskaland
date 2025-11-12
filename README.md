@@ -23,11 +23,12 @@ The Nebraskaland theme includes styles for the following modules, but they are n
 **If the site is moved to new hosting or a new Omeka S instance**, the theme may need to be installed again. To install the theme, download this GitHub repository as a `.zip` file (instructions can be found in GitHub's [downloading files from GitHub documentation](https://docs.github.com/en/get-started/start-your-journey/downloading-files-from-github#downloading-a-repositorys-files)) and follow the instructions in the [Omeka S User Manual](https://omeka.org/s/docs/user-manual/sites/site_theme/) to install it. Modules may also need to be installed again. Most importantly, **page content, site text, and theme settings will have to be copied over manually**,  since they are controlled through the Omeka S admin interface rather than through the theme files.  Omeka S theme files contain only the basic visual design of the site (colors, fonts, layout, and templates).
 
 The CSS Editor module also contains some theme styles (hiding certain elements, for example) so that they can be modified without going into the theme folder. If the theme has to be (re)installed, the contents of the CSS Editor will need to be copied over manually. To copy the CSS Editor code to a new installation: 
-    1. [Install and activate](https://omeka.org/s/docs/user-manual/modules/#installing-modules) the [CSS Editor module](https://omeka.org/s/modules/CSSEditor/) for the new install, if you haven't already.
-    2. Go to your site in the admin interface, and in the sidebar, click "CSS Editor."
-    3. Copy the CSS code from the old site, or from the [css-editor/css-editor-backup.css](https://github.com/CDRH/theme_nebraskaland/blob/main/css-editor/css-editor-backup.css) file in this GitHub repository.
-    4. Paste the copied CSS into the "CSS Editor" box.
-    5. Click "Save."
+
+1. [Install and activate](https://omeka.org/s/docs/user-manual/modules/#installing-modules) the [CSS Editor module](https://omeka.org/s/modules/CSSEditor/) for the new install, if you haven't already.
+2. Go to your site in the admin interface, and in the sidebar, click CSS Editor.
+3. Copy the CSS code from the old site, or from the [css-editor/css-editor-backup.css](https://github.com/CDRH/theme_nebraskaland/blob/main/css-editor/css-editor-backup.css) file in this GitHub repository.
+4. Paste the copied CSS into the CSS Editor box.
+5. Click Save.
 
 ## Designing a Site with this Theme
 
@@ -78,22 +79,22 @@ To add (or change) a logo in the footer, you can select an already-uploaded asse
 
 To add a logo image that has **not** already been uploaded as an Asset:
 
-  1. On the "Edit theme settings" page, go to the Footer Logo # field (1, 2, or 3) and click "Select."
+  1. On the Edit theme settings page, go to the Footer Logo # field (1, 2, or 3) and click Select.
   2. Follow the instructions to [Add an asset in Omeka S](https://omeka.org/s/docs/user-manual/admin/assets/#add-an-asset).
   3. **Alt text is required for ADA Title II web accessibility compliance.** It's easiest to enter the alt text before you click Upload.
   4. Do not check the box for Optimize size for web if your image has a transparent background (like a PNG). It is okay to do so for JPG/JPEG files, however.
   5. Click Upload.
-  6. The Asset has now been uploaded. Find it in the list under "Select asset" and click to select it.
-  7. If you want the image to be a link (e.g. have the Mellon logo take users to the Mellon website when they click it), paste the full URL in the corresponding "Footer Logo # Link" field.
-  7. Save your changes using the "Save" button in the top right corner of the page.
+  6. The Asset has now been uploaded. Find it in the list under Select asset and click to select it.
+  7. If you want the image to be a link (e.g. have the Mellon logo take users to the Mellon website when they click it), paste the full URL in the corresponding Footer Logo # Link field.
+  7. Save your changes using the Save button in the top right corner of the page.
 
 To add a logo image that has **already** been uploaded as an Asset:
 
-  1. Make sure the Asset has alt text first. To do this, follow the instructions to [Edit an asset in Omeka S](https://omeka.org/s/docs/user-manual/admin/assets/#edit-an-asset); if the Alt Text field is empty, add alt text and click "Save".
-  2. On the "Edit theme settings" page, go to the Footer Logo # field (1, 2, or 3) and click "Select."
-  3. Find the image in the list under "Select asset" and click to select it.
-  4. If you want the image to be a link (e.g. have the Mellon logo take users to the Mellon website when they click it), paste the full URL in the corresponding "Footer Logo # Link" box.
-  5. Save your changes using the "Save" button in the top right corner of the page.
+  1. Make sure the Asset has alt text first. To do this, follow the instructions to [Edit an asset in Omeka S](https://omeka.org/s/docs/user-manual/admin/assets/#edit-an-asset); if the Alt Text field is empty, add alt text and click Save.
+  2. On the Edit theme settings page, go to the Footer Logo # field (1, 2, or 3) and click Select.
+  3. Find the image in the list under Select asset and click to select it.
+  4. If you want the image to be a link (e.g. have the Mellon logo take users to the Mellon website when they click it), paste the full URL in the corresponding Footer Logo # Link box.
+  5. Save your changes using the Save button in the top right corner of the page.
 
 #### Changing a footer logo image
 
@@ -107,7 +108,7 @@ You can add, remove, or change a footer logo link at any time. You do not need t
 
 To remove a logo image: 
 
-  1. On the Edit theme settings page, go to the relevant Footer Logo # field (1, 2, or 3) and under the logo thumbnail, click "Clear."
+  1. On the Edit theme settings page, go to the relevant Footer Logo # field (1, 2, or 3) and under the logo thumbnail, click Clear.
   2. Delete the URL in the corresponding Footer Logo # Link field, if there is one.
   3. Save your changes using the Save button in the top right corner of the page.
 
@@ -149,9 +150,9 @@ The CSSEditor module does not currently have versioning, meaning that if you del
 
 ### Hidden Elements
 
-With the launch of the Equality Before the Law site in 2025, we chose to hide a few elements with `display: none` in the CSS Editor rather than by overriding PHP in the base Omeka S files. This means that to _unhide_ any of those elements, all you need to do is find the relevant code in the CSS Editor and delete it. We recommend using this method any time you need to hide an element due to the CSS Editor's ease of use.
+With the launch of the site in 2025, we chose to hide a few elements with `display: none` in the CSS Editor rather than by overriding PHP in the base Omeka S files. This means that to _unhide_ any of those elements, all you need to do is find the relevant code in the CSS Editor and delete it.
 
-Deleting the following code from the CSS Editor, for example, will make "Resource Class" show up as a sorting option site-wide:
+Deleting the following code from the CSS Editor, for example, will make Resource Class show up as a sorting option site-wide:
 
 ```
 form.sorting select:first-of-type option:nth-child(2) {
@@ -161,7 +162,7 @@ form.sorting select:first-of-type option:nth-child(2) {
 
 ## Omeka S Page Blocks
 
-The Omeka S Page editor allows you to apply CSS classes in its block layout UI. This can be a huge help when it comes to applying specific styles on Pages. (As of 2025, this is not possible for resource pages, i.e. Item page, Media page, or Item Set page).
+The Omeka S Page editor allows you to apply CSS classes in its block layout UI. This can be a huge help when it comes to applying specific styles within a page (especially thanks to Bootstrap 3's wide variety of ready-to-use CSS classes). As of 2025, this functionality is only available for Pages (aka Simple Pages); it is not possible for resource pages, i.e. Item pages, Media pages, or Item Set pages.
 
 ### Page Title Block
 
@@ -169,7 +170,47 @@ Every page must have a Heading 1 (`<h1>`) to meet ADA Title II requirements. Whe
 
 ### Homepage Images block
 
-TBD
+A custom block template has been created for the Nebraskaland Omeka S theme in order to display a random background image on the homepage (as the previous site did) with an overlaid text box. This custom design is not a type of Page Block, but rather a selectable template for the [Asset](https://omeka.org/s/docs/user-manual/sites/site_pages/#asset) block type. 
+
+When editing the Home page, you'll see a block called Asset that lists each of the currently selected images with a thumbnail and the file name. This is where the custom design is configured. Each time the home page is loaded, Omeka S randomly selects one of the listed images to display. The image's caption is displayed in a transparent rectangle that overlays the image.
+
+#### Edit homepage text
+
+Each homepage image must be set up with its own caption. To display the same homepage text all the time (no matter which image is displayed), just put the same HTML/text in the Caption box for each image/asset. As of November 2025, all 5 homepage images have the same exact caption text.
+
+To edit the text on the homepage, edit the image's caption: click the wrench icon to the right of the image to open the configuration options. In the box labeled Caption, you can edit the existing HTML. Paragraph styling (e.g. centered text) and links are added to the caption using HTML, so if you are not familiar with HTML paragraph or link tags, use caution when editing and change only the text you need to.
+
+#### Add a new homepage image
+
+1. In the Asset block, click the Add asset button.
+2. Upload a new asset or select an existing asset.
+3. If you are uploading a new asset, be sure to add alt text (required for accessibility compliance).
+4. Fill in the Caption text box with the text/HTML to be displayed in the overlay.
+5. Click Apply changes.
+6. Save the page.
+
+#### Edit or change a homepage image
+
+1. In the Asset block, click the wrench icon to the right of the image to open the configuration options.
+2. In the configuration options, click Select (under the image thumbnail) and upload a new asset or select an existing asset.
+3. Edit the caption, if needed.
+4. Click Apply changes.
+5. Save the page.
+
+#### Remove a homepage image
+
+1. In the Asset block, click the trash can icon to the right of the image.
+
+#### Adding a new homepage image block from scratch
+
+If the home page needs to be re-created, or if you wish to use the same block template on a different page:
+
+1. Edit the page.
+2. Under Add new block, click Asset.
+3. In the newly added Asset block, click the settings icon (3 gears) to the right of the block title.
+4. In the Block layout configuration, click the Template dropdown menu and select Random asset with caption overlay.
+5. Click Apply changes.
+6. Follow the instructions above to add images and text.
 
 ## Module settings
 
