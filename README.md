@@ -116,6 +116,10 @@ To remove a logo image:
 
 The 404 Page Title and Custom Text boxes allow you to customize the _404: Page Not Found_ error page users will see if they try to view a page on the site that doesn't exist. (You can see this in action at any nonexistent URL, such as https://nebraskaland.unl.edu/blahblahblah.)
 
+## Note for Future Developers
+
+If the `.scss`/`.css` files in this theme are modified at some point in the future, review Omeka S' [Sass and CSS documentation](https://omeka.org/s/docs/developer/themes/sass_and_css/#editing-the-styles) **BEFORE** making any modifications, and follow the instructions on that page to compile your changes to the theme's CSS.
+
 ## Configure resource pages
 
 As of November 2025, this theme is designed around the following Resource page block layouts. To check and/or edit these, follow the Omeka S [Configure resource pages documentation](https://omeka.org/s/docs/user-manual/sites/site_theme/#configure-resource-pages).
