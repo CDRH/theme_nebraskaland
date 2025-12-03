@@ -172,7 +172,7 @@ The Omeka S Page editor allows you to apply CSS classes in its block layout UI. 
 
 Every page must have a Heading 1 (`<h1>`) to meet ADA Title II requirements. When editing pages, this is most easily accomplished with the **Page title block**, which displays the page title as an `<h1>`. When you create a page, it should already be added as a block.
 
-### Homepage Images block
+### Homepage Images block (randomized)
 
 A custom block template has been created for the Nebraskaland Omeka S theme in order to display a random background image on the homepage (as the previous site did) with an overlaid text box. This custom design is not a type of Page Block, but rather a selectable template for the [Asset](https://omeka.org/s/docs/user-manual/sites/site_pages/#asset) block type. 
 
@@ -215,6 +215,10 @@ If the home page needs to be re-created, or if you wish to use the same block te
 4. In the Block layout configuration, click the Template dropdown menu and select Random asset with caption overlay.
 5. Click Apply changes.
 6. Follow the instructions above to add images and text.
+7. If, on the published page, there is a white line showing up at the bottom of the block, change page layout's row gap from 10px to 0px:<br />
+  a. Edit the page.<br />
+  b. Above the blocks, in the same row as the Layout dropdown, click the settings icon (3 gears) to open the Page layout configuration options.<br />
+  c. In the Page layout configuration options, change Row gap (px) to 0px. 
 
 ## Module settings
 
