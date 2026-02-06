@@ -123,3 +123,68 @@ Random Asset with Caption Overlay
     font-size: 1.485rem;
   }
 }
+
+// Asset block template - link with background image (for Browse)
+
+/* Asset block template - link with background image (for Browse) */
+ 
+ 
+.links-with-background-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+
+  .link-with-background-image {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+
+    a.link-image {
+      background-position: center;
+      background-size: cover;
+      display: block;
+      max-width: 525px;
+      min-width: 300px;
+      padding: 60px;
+      width: 100%;
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      .link-title {
+        background-color: white;
+        color: rgba(25,73,111,0.9);
+        display: inline-block;
+        font-size: 24px;
+        margin: auto;
+        padding: 10px;
+      }
+    }
+    .caption {
+    flex: 100%;
+  }
+ }
+}
+
+@media screen and (min-width: 768px) {
+  .assets .asset {
+    .link-with-background-image {
+      margin: 10px;
+      max-width: 525px;
+
+      &:first-of-type {
+        max-width: initial;
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+
+
+
