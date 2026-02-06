@@ -9,23 +9,19 @@
         <?php if ($page): ?>
             <a href="<?php echo $escape($page->siteUrl()); ?>" class="link-image" style="background-image: url('<?php echo $asset->assetUrl(); ?>');">
                 <?php // echo $assetImage; ?>
-                <div class="link-text">
-                  <?php $altLinkTitle = ($attachment['alt_link_title'] !== '') ? $escape($attachment['alt_link_title']) : false; ?>
-                  <div class="link-title"><?php echo ($altLinkTitle) ? $altLinkTitle : $escape($page->title()); ?></div>
-                  <?php if ($attachment['caption'] !== ''): ?>
-                  <div class="caption"><?php echo $escape($attachment['caption']); ?></div>
-                  <?php endif; ?>
-                </div>
+                <?php $altLinkTitle = ($attachment['alt_link_title'] !== '') ? $escape($attachment['alt_link_title']) : false; ?>
+                <span class="link-title"><?php echo ($altLinkTitle) ? $altLinkTitle : $escape($page->title()); ?></span>
             </a>
         <?php else: ?>
             <!-- if you are seeing this code, you need to edit this asset and link it to a page. -->
-            <div class="link-image asset-is-not-linked" style="background-image: url('<?php echo $asset->assetUrl(); ?>');">
-              <div class="link-text">
-                <?php if ($attachment['caption'] !== ''): ?>
-                <div class="caption"><?php echo $escape($attachment['caption']); ?></div>
-                <?php endif; ?>
+            <div class="link-image" style="background-image: url('<?php echo $asset->assetUrl(); ?>');">
+              <div class="link-text missing-link">
+                <span class="link-title"><?php echo ($altLinkTitle) ? $altLinkTitle : $escape($page->title()); ?></span>
               </div>
             </div>
+        <?php endif; ?>
+        <?php if ($attachment['caption'] !== ''): ?>
+            <div class="caption"><?php echo $escape($attachment['caption']); ?></div>
         <?php endif; ?>
     </div>
   <?php endforeach; ?>
