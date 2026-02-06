@@ -1,17 +1,29 @@
-/* Hide Universal viewer completely from this site */
-
-.universal-viewer {
-  display: none;
-}
-
 /* ///////////////////////////////////////////////////////////////
- Hide "Resource Class" from sort options
+ Hide Sort options from Faceted Browse page(s), e.g. Search
 /////////////////////////////////////////////////////////////// */
 
-form.sorting select:first-of-type option:nth-child(2) {
+/* Hide "Created" from sort options */
+form.sorting option[value="created"]{
   display: none;
 }
 
+/* Hide "Resource Class" from sort options */
+form.sorting option[value="resource_class_label"]{
+  display: none;
+}
+
+/* /////////////////////////////////////////////////////
+Hide any metadata "Columns" from Faceted Browse results
+after the first 2 (currently Title and Date issued)
+//////////////////////////////////////////////////// */
+
+.faceted-browse-page#body-wrapper #section-content table tr td:nth-child(n+3) {
+  display: none;
+}
+
+/* /////////////////////////////////////
+Hide elements on Item pages
+////////////////////////////////// */
 
 /* Hide extra cover images */
 
@@ -63,4 +75,9 @@ octopusviewer-viewer {
 .item.resource.show .container h2:first-of-type + h3, 
 .item.resource.show .media-list img {
   display: none !important;
+}
+
+.site-title .title_ne:before,
+.site-title .title_land::before {
+  color: transparent;
 }
