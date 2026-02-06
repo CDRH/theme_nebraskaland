@@ -7,12 +7,13 @@ Random Asset with Caption Overlay
 
 // Display only one image at a time
 .random-background-image {
-  background-position:center center;
-  background-size:cover;
+  // background-position:center center;
+  // background-size:cover;
   display: none;
-  justify-content: end;
-  min-height:40vh;
-  width: 100%;
+  // justify-content: end;
+  // min-height:40vh;
+  // width: 100%;
+  overflow: hidden;
 }
 
 .assets .asset.random-background-image:not(:last-child) {
@@ -20,39 +21,58 @@ Random Asset with Caption Overlay
 }
 
 .display-attachment-1 .attachment-1 {
-  display: flex;
+  display: block;
 }
 
 .display-attachment-2 .attachment-2 {
-  display: flex;
+  display: block;
 }
 
 .display-attachment-3 .attachment-3 {
-  display: flex;
+  display: block;
 }
 
 .display-attachment-4 .attachment-4 {
-  display: flex;
+  display: block;
 }
 
 .display-attachment-5 .attachment-5 {
-  display: flex;
+  display: block;
 }
-
-
 
 // Caption overlay
 .random-background-image {
-  .container {
-    padding: 0;
+
+  .random-image-wrapper {
+    background: #2d2d2d;
+    position: relative;
+    text-align: center;
+
+    img {
+      // height: 100%;
+      max-height: 600px;
+      max-width: initial;
+      // min-width: 100%;
+      // width: auto;
+    }
+  }
+
+  .caption-wrapper {
+    margin-left: var(--bs-gutter-x);
+    margin-right: var(--bs-gutter-x);
+    padding-top: var(--bs-gutter-x);
+    position: absolute;
+    right: 0px;
+    top: 0px;
   }
 
   .caption {
     background:rgba(255,255,255,0.8);
     font-size: 1.25rem;
     line-height: 1.2;
-    margin: 20px 0px 40px auto;
-    padding: 20px 20px 10px 20px;
+    // margin: 20px 0px 40px auto;
+    max-width: 450px;
+    padding: 30px 20px 1px 20px;
     text-align: center;
 
     p {
@@ -66,20 +86,40 @@ Random Asset with Caption Overlay
 }
 
 @media screen and (min-width: 768px) {
-  .random-background-image .container .caption {
-    width: 45vw;
+  .random-background-image {
+    .random-image-wrapper img {
+      max-height: initial;
+      width: 100%;
+    }
+
+    .caption-wrapper {
+      left: 55%;
+
+      .caption {
+        width: 45vw;
+      }
+    }
   }
 }
 
 @media screen and (min-width: 992px) {
-  .random-background-image .container .caption {
-    font-size: 1.37rem;
-    width: 30vw
+  .random-background-image {
+      .random-image-wrapper {
+        img {
+          max-height: initial;
+          width: initial;
+        }
+
+      .caption {
+        font-size: 1.37rem;
+        width: 30vw;
+      }
+    }
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .random-background-image .container .caption {
+  .random-background-image .caption {
     font-size: 1.485rem;
   }
 }
