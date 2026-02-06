@@ -129,11 +129,11 @@ Random Asset with Caption Overlay
 }
 
 @media screen and (min-width: 768px) {
-  .assets .asset.link-with-background-image {
+  .assets.links-with-background-images .asset.link-with-background-image {
     margin: 10px;
     max-width: 525px;
   }
-  .assets .asset.link-with-background-image:first-of-type {
+  .assets.links-with-background-images .asset.link-with-background-image:first-of-type {
     max-width: initial;
     width: 100%;
   }
