@@ -1,0 +1,28 @@
+<?php $escape = $this->plugin('escapeHtml'); ?>
+
+<div class="assets links-with-background-images">
+  <?php foreach ($attachments as $attachment): ?>
+    <?php $asset = $attachment['asset']; ?>
+    <div class="asset link-with-background-image">
+        <?php $assetImage = ($asset) ? $this->thumbnail($asset, 'square') : ''; ?>
+        <?php $page = (array_key_exists('page', $attachment)) ? $attachment['page'] : null; ?>
+        <?php if ($page): ?>
+            <a href="<?php echo $escape($page->siteUrl()); ?>" class="link-image" style="background-image: url('<?php echo $asset->assetUrl(); ?>');">
+                <?php // echo $assetImage; ?>
+                <?php $altLinkTitle = ($attachment['alt_link_title'] !== '') ? $escape($attachment['alt_link_title']) : false; ?>
+                <span class="link-title"><?php echo ($altLinkTitle) ? $altLinkTitle : $escape($page->title()); ?></span>
+            </a>
+        <?php else: ?>
+            <!-- if you are seeing this code, you need to edit this asset and link it to a page. -->
+            <div class="link-image" style="background-image: url('<?php echo $asset->assetUrl(); ?>');">
+              <div class="link-text missing-link">
+                <span class="link-title"><?php echo ($altLinkTitle) ? $altLinkTitle : $escape($page->title()); ?></span>
+              </div>
+            </div>
+        <?php endif; ?>
+        <?php if ($attachment['caption'] !== ''): ?>
+            <div class="caption"><?php echo $escape($attachment['caption']); ?></div>
+        <?php endif; ?>
+    </div>
+  <?php endforeach; ?>
+</div>

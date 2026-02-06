@@ -3,12 +3,8 @@ Asset Block Template:
 Random Asset with Caption Overlay
 //////////////////////////////// */
 .random-background-image {
-  background-position: center center;
-  background-size: cover;
   display: none;
-  justify-content: end;
-  min-height: 40vh;
-  width: 100%;
+  overflow: hidden;
 }
 
 .assets .asset.random-background-image:not(:last-child) {
@@ -16,34 +12,48 @@ Random Asset with Caption Overlay
 }
 
 .display-attachment-1 .attachment-1 {
-  display: flex;
+  display: block;
 }
 
 .display-attachment-2 .attachment-2 {
-  display: flex;
+  display: block;
 }
 
 .display-attachment-3 .attachment-3 {
-  display: flex;
+  display: block;
 }
 
 .display-attachment-4 .attachment-4 {
-  display: flex;
+  display: block;
 }
 
 .display-attachment-5 .attachment-5 {
-  display: flex;
+  display: block;
 }
 
-.random-background-image .container {
-  padding: 0;
+.random-background-image .random-image-wrapper {
+  background: #2d2d2d;
+  position: relative;
+  text-align: center;
+}
+.random-background-image .random-image-wrapper img {
+  max-height: 600px;
+  max-width: initial;
+}
+.random-background-image .caption-wrapper {
+  margin-left: var(--bs-gutter-x);
+  margin-right: var(--bs-gutter-x);
+  padding-top: var(--bs-gutter-x);
+  position: absolute;
+  right: 0px;
+  top: 0px;
 }
 .random-background-image .caption {
   background: rgba(255, 255, 255, 0.8);
   font-size: 1.25rem;
   line-height: 1.2;
-  margin: 20px 0px 40px auto;
-  padding: 20px 20px 10px 20px;
+  max-width: 450px;
+  padding: 30px 20px 1px 20px;
   text-align: center;
 }
 .random-background-image .caption p {
@@ -54,19 +64,78 @@ Random Asset with Caption Overlay
 }
 
 @media screen and (min-width: 768px) {
-  .random-background-image .container .caption {
+  .random-background-image .random-image-wrapper img {
+    max-height: initial;
+    width: 100%;
+  }
+  .random-background-image .caption-wrapper {
+    left: 55%;
+  }
+  .random-background-image .caption-wrapper .caption {
     width: 45vw;
   }
 }
 @media screen and (min-width: 992px) {
-  .random-background-image .container .caption {
+  .random-background-image .random-image-wrapper img {
+    max-height: initial;
+    width: initial;
+  }
+  .random-background-image .random-image-wrapper .caption {
     font-size: 1.37rem;
     width: 30vw;
   }
 }
 @media screen and (min-width: 1200px) {
-  .random-background-image .container .caption {
+  .random-background-image .caption {
     font-size: 1.485rem;
+  }
+}
+/* Asset block template - link with background image (for Browse) */
+.links-with-background-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+.links-with-background-images .link-with-background-image {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+.links-with-background-images .link-with-background-image a.link-image {
+  background-position: center;
+  background-size: cover;
+  display: block;
+  max-width: 525px;
+  min-width: 300px;
+  padding: 60px;
+  width: 100%;
+}
+.links-with-background-images .link-with-background-image a.link-image:hover {
+  opacity: 0.7;
+}
+.links-with-background-images .link-with-background-image a.link-image .link-title {
+  background-color: white;
+  color: rgba(25, 73, 111, 0.9);
+  display: inline-block;
+  font-size: 24px;
+  margin: auto;
+  padding: 10px;
+}
+.links-with-background-images .link-with-background-image .caption {
+  flex: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .assets.links-with-background-images .asset.link-with-background-image {
+    margin: 10px;
+    max-width: 525px;
+  }
+  .assets.links-with-background-images .asset.link-with-background-image:first-of-type {
+    max-width: initial;
+    width: 100%;
   }
 }
 /* Keep all CSS wrapped in 
@@ -788,14 +857,13 @@ button[type=submit]:hover {
   flex-direction: column;
   font-weight: 600;
 }
-.faceted-browse-page#body-wrapper #section-content table tr td:last-child {
-  display: none;
-}
 .faceted-browse-page#body-wrapper #section-content table tr td {
   border-bottom: 0;
   max-width: initial;
   min-width: initial;
+  font-weight: 600;
   padding: initial;
+  text-align: center;
   width: initial;
   text-align: center;
 }
@@ -803,7 +871,6 @@ button[type=submit]:hover {
   align-items: start;
   color: var(--bs-link-color);
   flex-direction: column;
-  text-align: center;
   text-decoration: none;
 }
 .faceted-browse-page#body-wrapper #section-content table tr td .resource-link > * {
@@ -843,11 +910,6 @@ button[type=submit]:hover {
   }
   h1, .h1 {
     font-size: 2.25rem;
-  }
-  .random-background-image .caption {
-    font-size: var(--ngp-body-font-size-sm);
-    margin-left: var(--bs-gutter-x);
-    margin-right: var(--bs-gutter-x);
   }
   #footer {
     font-size: var(--ngp-body-font-size-sm);

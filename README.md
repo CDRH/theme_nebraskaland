@@ -154,15 +154,56 @@ The CSSEditor module does not currently have versioning, meaning that if you del
 
 ### Hidden Elements
 
-With the launch of the site in 2025, we chose to hide a few elements with `display: none` in the CSS Editor rather than by overriding PHP in the base Omeka S files. This means that to _unhide_ any of those elements, all you need to do is find the relevant code in the CSS Editor and delete it.
+With the launch of the site in 2025, we chose to hide a few elements with `display: none` in the CSS Editor rather than by overriding PHP in the base Omeka S files. There are notes (which start with `/*` and end with `*/`) that will help you identify which lines of CSS code hide each element.
+
+#### Unhiding elements
+
+To_unhide_ any of the elements that are hidden via the CSS Editor, you can find the relevant code in the CSS Editor and delete it. 
 
 Deleting the following code from the CSS Editor, for example, will make Resource Class show up as a sorting option site-wide:
 
 ```
-form.sorting select:first-of-type option:nth-child(2) {
+form.sorting option[value="created"]{
   display: none;
 }
 ```
+
+#### Hiding/unhiding sort options
+
+As of January 2026, "Created" (which refers to the date the Omeka S item was created) and "Resource Class" are hidden from the Sort By dropdowns site-wide. The following code in the CSS Editor is what hides them from the dropdown menu:
+
+```
+/* Hide "Created" from sort options */
+form.sorting option[value="created"]{
+  display: none;
+}
+
+/* Hide "Resource Class" from sort options */
+form.sorting option[value="resource_class_label"]{
+  display: none;
+}
+```
+
+As of January 2026, those are the only two Sort options that could **_not_** be hidden via the Faceted Browse settings. To hide options in the future, edit the Faceted Browse itself; then, for the relevant Column, check the box for "Exclude sort by."
+
+
+#### Hiding/unhiding metadata in Faceted Browse results
+
+As of January 2026, the search results on Faceted Browse pages show only the issue cover image, the title, and date (month and year, e.g. June 1956). The metadata beneath the image thumbnail corresponds to the "Columns" added through the Faceted Browse settings.
+
+The best thing to do, if you don't want a specific piece of metadata to show up, is to delete it from the list of Columns. However, in order for something to be in the Sort options, it must be added to the list of Columns (and must not be deleted). Thus, to remove a piece of metadata from view _without removing it from the sort options_, you can use a CSS trick called `nth-child(#)` to visually hide it.
+
+As of January 2026, we are using a trick in the CSS editor—`nth-child(n+3)`—which hides _everything after the 3rd thing_ (i.e. everything after the date):
+
+```
+.faceted-browse-page#body-wrapper #section-content table tr td:nth-child(n+3) {
+  display: none;
+}
+```
+
+`nth-child(1)` basically means "the 1st thing in the Faceted Browse result (the image thumbnail);" `nth-child(2)` means the 2nd thing in the Faceted Browse result, but since the list of Columns in the Faceted Browse settings doesn't include the image thumbnail, `nth-child(2)` would correspond to the `1st` Column. (As of January 2026, the 2nd child/1st column is the issue title). `nth-child(3)` means the 3rd thing below the image thumbnail, aka the 2nd Column (as of January 2026, the date). `nth-child(4)`, then, would mean the thing after that, and the numbers would proceed from there. `nth-child(n+3)` means everything after the 3rd thing.
+
+Changing this code sometimes requires some trial and error. If you want to make changes, be ready to rewrite CSS and/or tweak the order of the Columns in the Faceted Browse settings to fine-tune your results. **Always back up the contents of the CSS Editor somewhere before making changes** (for example, in a text file or in this repository).
 
 ## Omeka S Page Blocks
 
@@ -171,6 +212,29 @@ The Omeka S Page editor allows you to apply CSS classes in its block layout UI. 
 ### Page Title Block
 
 Every page must have a Heading 1 (`<h1>`) to meet ADA Title II requirements. When editing pages, this is most easily accomplished with the **Page title block**, which displays the page title as an `<h1>`. When you create a page, it should already be added as a block.
+
+
+### Links with background images
+
+As on the previous site, the Browse page has large rectangular links that go to various "browse by"-type pages (browse by decade, browse by season, etc.). This theme provides a custom Asset block template, "Links with background images," to make it easier to add and edit these kinds of designs.
+
+To set up a block that uses this template:
+
+1. Edit the page
+2. Add a new "Asset" block
+3. Click the gears icon in the top right of the Asset block
+4. Under "Template", choose "Links with background images"
+5. Click "Apply changes"
+
+To add an image or edit an existing image:
+
+1. In the already-added Asset block, click "Add asset," then upload an image or select an image from the list
+2. Under "Page link," select a page to link to
+3. If you want the link text to be different than the page it links to, enter the custom text under "Alternative link title"
+4. Click "Apply changes"
+5. Save the page
+
+By default, the first link in each block will be on its own line. All links after that will be two-per-line.
 
 ### Homepage Images block (randomized)
 

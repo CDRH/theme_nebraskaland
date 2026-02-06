@@ -980,15 +980,13 @@ button[type='submit'] {
       flex-direction: column;
       font-weight: 600;
 
-      td:last-child {
-        display: none;
-      }
-
       td { // td
         border-bottom: 0;
         max-width: initial;
         min-width: initial;
+        font-weight: 600;
         padding: initial;
+        text-align: center;
         width: initial;
 
         text-align: center;
@@ -997,7 +995,6 @@ button[type='submit'] {
           align-items: start;
           color: var(--bs-link-color);
           flex-direction: column;
-          text-align: center;
           text-decoration: none;
 
           > * {
@@ -1050,12 +1047,6 @@ button[type='submit'] {
   h1, .h1 {
     font-size: 2.25rem;
   }
-
-  .random-background-image .caption {
-    font-size: var(--ngp-body-font-size-sm);
-    margin-left: var(--bs-gutter-x);
-    margin-right: var(--bs-gutter-x);
-  }  
 
   #footer {
     font-size: var(--ngp-body-font-size-sm);
