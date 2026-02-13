@@ -218,6 +218,8 @@ Every page must have a Heading 1 (`<h1>`) to meet ADA Title II requirements. Whe
 
 As on the previous site, the Browse page has large rectangular links that go to various "browse by"-type pages (browse by decade, browse by season, etc.). This theme provides a custom Asset block template, "Links with background images," to make it easier to add and edit these kinds of designs.
 
+![Links with background images on Browse page](https://github.com/CDRH/theme_nebraskaland/blob/main/docs/browse-image-links.png)
+
 To set up a block that uses this template:
 
 1. Edit the page
@@ -226,13 +228,22 @@ To set up a block that uses this template:
 4. Under "Template", choose "Links with background images"
 5. Click "Apply changes"
 
-To add an image or edit an existing image:
+![Screenshot of Asset block setup for links with background images](https://github.com/CDRH/theme_nebraskaland/blob/main/docs/browse-image-links-setup.png)
+
+
+To add a new link to the block:
 
 1. In the already-added Asset block, click "Add asset," then upload an image or select an image from the list
 2. Under "Page link," select a page to link to
 3. If you want the link text to be different than the page it links to, enter the custom text under "Alternative link title"
 4. Click "Apply changes"
 5. Save the page
+
+To edit an existing link:
+1. In the already-added Asset block, find the link/image you want to change
+2. Click the wrench icon to the right of the link/image
+3. Make your changes to the image asset or the page link
+4. Save the page
 
 By default, the first link in each block will be on its own line. All links after that will be two-per-line.
 
