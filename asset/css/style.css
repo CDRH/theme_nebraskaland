@@ -225,11 +225,11 @@ Header
     font-weight: 700;
     position: relative;
   }
-  .site-title .title .title_ne {
+  .site-title .title_ne {
     position: relative;
     text-shadow: 0.03em 0.03em 1px #676665;
   }
-  .site-title .title .title_ne::before {
+  .site-title .title_ne::before {
     content: "Nebraska";
     position: absolute;
     top: 0.28em;
@@ -240,12 +240,12 @@ Header
     z-index: -1;
     text-shadow: 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white;
   }
-  .site-title .title .title_land {
+  .site-title .title_land {
     font-weight: 100;
     position: relative;
     text-shadow: 0.03em 0.03em 1px #676665;
   }
-  .site-title .title .title_land::before {
+  .site-title .title_land::before {
     content: "land";
     position: absolute;
     top: 0.28em;
@@ -443,6 +443,10 @@ Header
 .site-page-home main > .container:first-child {
   max-width: 100%;
   padding: 0;
+}
+.site-page-home .block.block-asset {
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 @media screen {
@@ -730,6 +734,11 @@ button[type=submit]:hover {
   color: var(--bs-btn-hover-color);
 }
 
+@media print, screen and (max-width: 39.9988em) {
+  .faceted-browse-page #section-sidebar.open {
+    padding-top: 55px;
+  }
+}
 @media screen and (min-width: 40em) {
   #helper-text-expand-collapse,
   #helper-text {

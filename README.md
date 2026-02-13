@@ -287,7 +287,7 @@ If the home page needs to be re-created, or if you wish to use the same block te
 1. Edit the page.
 2. Under Add new block, click Asset.
 3. In the newly added Asset block, click the settings icon (3 gears) to the right of the block title.
-4. In the Block layout configuration, click the Template dropdown menu and select Random asset with caption overlay.
+4. In the Block layout configuration, click the Template dropdown menu and select Full size image with caption overlay.
 5. Click Apply changes.
 6. Follow the instructions above to add images and text.
 7. If, on the published page, there is a white line showing up at the bottom of the block, change page layout's row gap from 10px to 0px:<br />
