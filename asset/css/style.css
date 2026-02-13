@@ -225,11 +225,11 @@ Header
     font-weight: 700;
     position: relative;
   }
-  .site-title .title_ne {
+  .site-title .title .title_ne {
     position: relative;
     text-shadow: 0.03em 0.03em 1px #676665;
   }
-  .site-title .title_ne::before {
+  .site-title .title .title_ne::before {
     content: "Nebraska";
     position: absolute;
     top: 0.28em;
@@ -240,12 +240,12 @@ Header
     z-index: -1;
     text-shadow: 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white;
   }
-  .site-title .title_land {
+  .site-title .title .title_land {
     font-weight: 100;
     position: relative;
     text-shadow: 0.03em 0.03em 1px #676665;
   }
-  .site-title .title_land::before {
+  .site-title .title .title_land::before {
     content: "land";
     position: absolute;
     top: 0.28em;
@@ -548,6 +548,11 @@ Header
 }
 .resource-link:hover img {
   border-color: var(--ngp-blue);
+}
+
+li.item.resource {
+  font-weight: 700;
+  text-align: center;
 }
 
 @media screen and (min-width: 575px) {

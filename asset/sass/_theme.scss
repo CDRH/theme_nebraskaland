@@ -14,11 +14,6 @@ a:hover {
 Body
 /////////////*/
 
-// body {
-//   font-size: 16px;
-//   line-height: 1.428571429;
-// }
-
   #body-wrapper {
     display: flex;
     flex-direction: column;
@@ -116,38 +111,40 @@ Header
     font-weight: 700;
     position: relative;
 
-    .title_ne {
-      position: relative;
-      text-shadow: .03em .03em 1px #676665;
+    .title {
+      .title_ne {
+        position: relative;
+        text-shadow: .03em .03em 1px #676665;
 
-      &::before {
-        content: "Nebraska";
-        position: absolute;
-        top: .28em;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        color: transparent;
-        z-index: -1;
-        text-shadow: 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white;
+        &::before {
+          content: "Nebraska";
+          position: absolute;
+          top: .28em;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          color: transparent;
+          z-index: -1;
+          text-shadow: 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white;
+        }
       }
-    }
 
-    .title_land {
-      font-weight: 100;
-      position: relative;
-      text-shadow: .03em .03em 1px #676665;
+      .title_land {
+        font-weight: 100;
+        position: relative;
+        text-shadow: .03em .03em 1px #676665;
 
-      &::before {
-        content: "land";
-        position: absolute;
-        top: .28em;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        color: transparent;
-        z-index: -1;
-        text-shadow: 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white;
+        &::before {
+          content: "land";
+          position: absolute;
+          top: .28em;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          color: transparent;
+          z-index: -1;
+          text-shadow: 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white, 0 0 1.2em white;
+        }
       }
     }
   }
@@ -551,6 +548,11 @@ Footer
   }
 }
 
+li.item.resource {
+  font-weight: 700;
+  text-align: center;
+}
+
 @media screen and (min-width: 575px) {
   .resource-link {
     max-width: 204px;
@@ -558,7 +560,6 @@ Footer
 }
 
 // Accordions
-
 
 .accordion {
   --bs-accordion-color: var(--bs-body-color);
@@ -727,54 +728,6 @@ button[type='submit'] {
     }
   }
 
-  // Module-generated expandable help text - overriden
-
-  // #helper-text-expand-collapse { // Instructions
-  //   background-color: var(--bs-btn-bg);
-  //   border: 1px solid var(--bs-btn-border-color);
-  //   border-radius: 0px;
-  //   color: var(--bs-btn-color);
-  //   display: flex;
-  //   margin-bottom: 0px;
-  //   padding: 0.75rem;
-  //   text-align: left;
-  //   text-decoration: none;
-
-  //     &:hover {
-  //       background-color: rgb(162, 196, 225);
-  //     }
-
-  //     &:after {
-  //       background-image: var(--bs-accordion-btn-icon);
-  //       background-repeat: no-repeat;
-  //       background-size: var(--bs-accordion-btn-icon-width);
-  //       content: "";
-  //       flex-shrink: 0;
-  //       height: var(--bs-accordion-btn-icon-width);
-  //       margin-left: auto;
-  //       transition: var(--bs-accordion-btn-icon-transition);
-  //       width: var(--bs-accordion-btn-icon-width);
-  //     }
-
-  //     &.expand:after {
-  //       background-image: var(--bs-accordion-btn-active-icon);
-  //       transform: var(--bs-accordion-btn-icon-transform);
-  //     }
-      
-  //   }
-
-  // #helper-text {
-  //   border: 1px solid var(--ngp-gray);
-  //   font-family: var(--bs-body-font-family);
-  //   margin-top: -1px;
-  //   padding: 0.825rem;
-  // }
-
-  // #helper-text-expand-collapse,
-  // #helper-text {
-  //   margin-right: 3rem;
-  // }
-
   #facets {
     margin-top: 20px;
   }
@@ -802,21 +755,6 @@ button[type='submit'] {
       border-color: var(--bs-btn-hover-border-color);
       color: var(--bs-btn-hover-color);
     }
-    // background: var(--ngp-light-blue);
-    // border-radius: 4px;
-    // border: 1px solid var(--ngp-gray);
-    // color: black;
-    // display: inline-block;
-    // margin-top: 4px;
-    // padding: 4px 8px;
-    // text-decoration: none;
-  
-    // &:focus,
-    // &:hover {
-    //   background: var(--ngp-blue);
-    //   border-color: var(--ngp-blue);
-    //   color: white;
-    // }
   }
 }
 
@@ -902,6 +840,7 @@ button[type='submit'] {
     margin-left: 0.5rem;
     margin-right: 1rem;
   }
+
 // Browse controls
 .browse-controls {
   align-items: center;
@@ -1172,10 +1111,6 @@ dl.media-list .property {
       word-break: break-word;
     }
   }
-
-
-
-
 }
 
 .media-embed .resource h3 {
