@@ -217,7 +217,7 @@ Every page must have a Heading 1 (`<h1>`) to meet ADA Title II requirements. Whe
 
 As on the previous site, the Browse page has large rectangular links that go to various "browse by"-type pages (browse by decade, browse by season, etc.). This theme provides a custom Asset block template, "Links with background images," to make it easier to add and edit these kinds of designs.
 
-![Links with background images Asset block](https://github.com/CDRH/theme_nebraskaland/blob/main/docs/center-first-image-link.png)
+![Links with background images Asset block](https://github.com/CDRH/theme_nebraskaland/blob/main/docs/link-image-block.png)
 
 #### Add a "Links with background images" block
 
