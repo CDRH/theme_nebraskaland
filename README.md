@@ -224,12 +224,12 @@ As on the previous site, the Browse page has large rectangular links that go to 
 
 To set up a block that uses this template:
 
-1. Edit the page
-2. Add a new "Asset" block
-3. Click the gears icon in the top right of the Asset block
-4. Under "Template", choose "Links with background images"
-5. Click "Apply changes"
-6. Save the page
+1. Edit the page.
+2. Add a new "Asset" block.
+3. Click the gears icon in the top right of the Asset block.
+4. Under "Template", choose "Links with background images."
+5. Click "Apply changes."
+6. Save the page.
 
 ![Screenshot of Asset block setup for links with background images](https://github.com/CDRH/theme_nebraskaland/blob/main/docs/browse-image-links-setup.png)
 
@@ -237,35 +237,35 @@ To set up a block that uses this template:
 
 To add a new link to the block:
 
-1. In the already-added Asset block, click "Add asset," then upload an image or select an image from the list
+1. In the already-added Asset block, click "Add asset," then upload an image or select an image from the list.
 2. Under "Page link," select a page to link to. **If you forget to select a Page link, the image will not display correctly.**
-3. If you want the link text to be different than the page it links to, enter the custom text under "Alternative link title"
-4. Click "Apply changes"
-5. Save the page
+3. If you want the link text to be different than the page it links to, enter the custom text under "Alternative link title."
+4. Click "Apply changes."
+5. Save the page.
 
 
 #### Edit a link/image in a "Links background images" block
 
 To edit an existing link:
 
-1. In the already-added Asset block, find the link/image you want to change
-2. Click the wrench icon to the right of the link/image
-3. Make your changes to the image asset or the page link
-4. Save the page
+1. In the already-added Asset block, find the link/image you want to change.
+2. Click the wrench icon to the right of the link/image.
+3. Make your changes to the image asset or the page link.
+4. Save the page.
 
 #### Remove a link/image from a "Links with background images" block
 
 1. In the Asset block, click the trash can icon to the right of the image.
-2. Save the page
+2. Save the page.
 
 #### Center the first link/image on its own line
 
 To put the first link on its own line and center it, add a class (`center-first`) to the Asset block. All links after that will be two-per-line, except on mobile devices or narrow browser widths.
 
-1. In the Asset block, click the gears icon in the top right of the Asset block
-2. Under "Class," type in `center first`
-3. Click "Apply Changes"
-4. Save the page
+1. In the Asset block, click the gears icon in the top right of the Asset block.
+2. Under "Class," type in `center first`.
+3. Click "Apply Changes."
+4. Save the page.
 
 If the first link/image is already centered, you can un-center it by removing the `center-first` class from the Asset block.
 
@@ -274,11 +274,11 @@ If the first link/image is already centered, you can un-center it by removing th
 If the links appear small, you can barely see the background image, and you can't click on them, 
 this means that you forgot to select a Page link. To fix this:
 
-1. In the Asset block, find the link/image that isn't displaying correctly
-2. Click the wrench icon to the right of the link/image
-3. Under "Page link," select a page to link to
-4. Click "Apply changes"
-5. Save the page
+1. In the Asset block, find the link/image that isn't displaying correctly.
+2. Click the wrench icon to the right of the link/image.
+3. Under "Page link," select a page to link to.
+4. Click "Apply changes."
+5. Save the page.
 
 ### Homepage Images block (randomized)
 
