@@ -170,22 +170,21 @@ form.sorting option[value="created"]{
 
 #### Hiding/unhiding sort options
 
-As of January 2026, "Created" (which refers to the date the Omeka S item was created) and "Resource Class" are hidden from the Sort By dropdowns site-wide. The following code in the CSS Editor is what hides them from the dropdown menu:
+Sort options are shown or hidden via the Faceted Browse settings, with the exception of two (as of March 2026): "Created" (which refers to the date the Omeka S item was created) and "Resource Class."
+
+Using CSS, "Created" and "Resources" are hidden from the Sort By dropdowns _for some browsers_. **Only some browsers support the use of CSS to style/hide options inside a dropdown element.** The following code in the CSS Editor is what hides them from the dropdown menu in browsers that support this functionality:
 
 ```
 /* Hide "Created" from sort options */
-form.sorting option[value="created"]{
+form.sorting select:first-of-type option[value="created"]{
   display: none;
 }
 
 /* Hide "Resource Class" from sort options */
-form.sorting option[value="resource_class_label"]{
+form.sorting select:first-of-type option[value="resource_class_label"]{
   display: none;
 }
 ```
-
-As of January 2026, those are the only two Sort options that could **_not_** be hidden via the Faceted Browse settings. To hide options in the future, edit the Faceted Browse itself; then, for the relevant Column, check the box for "Exclude sort by."
-
 
 #### Hiding/unhiding metadata in Faceted Browse results
 
@@ -230,7 +229,7 @@ To set up a block that uses this template:
 5. Click "Apply changes."
 6. Save the page.
 
-![Screenshot of Asset block setup for links with background images](https://github.com/CDRH/theme_nebraskaland/blob/main/docs/link-image-setup.png)
+![Asset block setup for links with background images](https://github.com/CDRH/theme_nebraskaland/blob/main/docs/link-image-setup.png)
 
 #### Add a new link/image to a "Links background images" block
 
@@ -249,7 +248,8 @@ To edit an existing link:
 1. In the already-added Asset block, find the link/image you want to change.
 2. Click the wrench icon to the right of the link/image.
 3. Make your changes to the image asset or the page link.
-4. Save the page.
+4. Click "Apply changes."
+5. Save the page.
 
 #### Remove a link/image from a "Links with background images" block
 
@@ -264,8 +264,8 @@ To put the first link on its own line and center it, add a class (`center-first`
 
 1. In the Asset block, click the gears icon in the top right of the Asset block.
 2. Under "Class," type in `center first`.
-3. Click "Apply Changes."
-4. Save the page.
+4. Click "Apply changes."
+5. Save the page.
 
 If the first link/image is already centered, you can un-center it by removing the `center-first` class from the Asset block.
 
@@ -284,13 +284,25 @@ this means that you forgot to select a Page link. To fix this:
 
 A custom block template has been created for the Nebraskaland Omeka S theme in order to display a random background image on the homepage (as the previous site did) with an overlaid text box. This custom design is not a type of Page Block, but rather a selectable template for the [Asset](https://omeka.org/s/docs/user-manual/sites/site_pages/#asset) block type. 
 
+![Homepage Images block (randomized)](https://github.com/CDRH/theme_nebraskaland/blob/main/docs/homepage-image-block.png)
+
 When editing the Home page, you'll see a block called Asset that lists each of the currently selected images with a thumbnail and the file name. This is where the custom design is configured. Each time the home page is loaded, Omeka S randomly selects one of the listed images to display. The image's caption is displayed in a transparent rectangle that overlays the image.
+
+![Homepage Images block setup](https://github.com/CDRH/theme_nebraskaland/blob/main/docs/homepage-image-setup.png)
 
 #### Edit homepage text
 
-Each homepage image must be set up with its own caption. To display the same homepage text all the time (no matter which image is displayed), just put the same HTML/text in the Caption box for each image/asset. As of November 2025, all 5 homepage images have the same exact caption text.
+Each homepage image must be set up with its own caption. To display the same homepage text all the time (no matter which image is displayed), just put the same HTML/text in the Caption box for each image/asset.
 
-To edit the text on the homepage, edit the image's caption: click the wrench icon to the right of the image to open the configuration options. In the box labeled Caption, you can edit the existing HTML. Paragraph styling (e.g. centered text) and links are added to the caption using HTML, so if you are not familiar with HTML paragraph or link tags, use caution when editing and change only the text you need to.
+To edit the text on the homepage, edit the image's caption:
+
+1. Edit the page 
+2. In the Asset block, click the wrench icon to the right of the image to open the configuration options.
+3. In the box labeled Caption, add, edit, or delete the existing HTML. Paragraph styling (e.g. centered text) and links are added to the caption using HTML, so if you are not familiar with HTML paragraph or link tags, use caution when editing and change only the text you need to.
+4. Click "Apply changes."
+5. Save the page.
+
+![Homepage Images block text setup](https://github.com/CDRH/theme_nebraskaland/blob/main/docs/homepage-image-setup-2.png)
 
 #### Add a new homepage image
 
