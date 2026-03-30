@@ -158,7 +158,7 @@ With the launch of the site in 2025, we chose to hide a few elements with `displ
 
 #### Unhiding elements
 
-To_unhide_ any of the elements that are hidden via the CSS Editor, you can find the relevant code in the CSS Editor and delete it. 
+To _unhide_ any of the elements that are hidden via the CSS Editor, you can find the relevant code in the CSS Editor and delete it. 
 
 Deleting the following code from the CSS Editor, for example, will make Resource Class show up as a sorting option site-wide:
 
@@ -172,7 +172,7 @@ form.sorting option[value="created"]{
 
 Sort options are shown or hidden via the Faceted Browse settings, with the exception of two (as of March 2026): "Created" (which refers to the date the Omeka S item was created) and "Resource Class."
 
-Using CSS, "Created" and "Resources" are hidden from the Sort By dropdowns _for some browsers_. **Only some browsers support the use of CSS to style/hide options inside a dropdown element.** The following code in the CSS Editor is what hides them from the dropdown menu in browsers that support this functionality:
+Using CSS, "Created" and "Resource Class" are hidden from the Sort By dropdowns _for some browsers_. **Only some browsers support the use of CSS to style/hide options inside a dropdown element.** The following code in the CSS Editor is what hides them from the dropdown menu in browsers that support this functionality:
 
 ```
 /* Hide "Created" from sort options */
