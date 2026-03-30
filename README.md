@@ -255,7 +255,6 @@ To edit an existing link:
 
 #### Remove a link/image from a "Links with background images" block
 
-
 1. In the Asset block, click the trash can icon to the right of the image.
 2. Save the page
 
@@ -313,7 +312,7 @@ To edit the text on the homepage, edit the image's caption: click the wrench ico
 #### Remove a homepage image
 
 1. In the Asset block, click the trash can icon to the right of the image.
-2. Save the page.4
+2. Save the page.
 
 #### Add a new homepage image block from scratch
 
