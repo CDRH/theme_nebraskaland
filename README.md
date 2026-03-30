@@ -258,7 +258,7 @@ To edit an existing link:
 
 #### Center the first link/image on its own line
 
-![Links with background images Asset block with first image centered](https://github.com/CDRH/theme_nebraskaland/blob/main/docs/center-first-image-link.png)
+![Links with background images Asset block with first image centered](https://github.com/CDRH/theme_nebraskaland/blob/main/docs/center-first-link-image.png)
 
 To put the first link on its own line and center it, add a class (`center-first`) to the Asset block. All links after that will be two-per-line, except on mobile devices or narrow browser widths.
 
