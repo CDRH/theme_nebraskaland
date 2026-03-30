@@ -133,7 +133,7 @@ Random Asset with Caption Overlay
     margin: 10px;
     max-width: 525px;
   }
-  .assets.links-with-background-images .asset.link-with-background-image:first-of-type {
+  .center-first .assets.links-with-background-images .asset.link-with-background-image:first-of-type {
     max-width: initial;
     width: 100%;
   }

@@ -158,7 +158,7 @@ With the launch of the site in 2025, we chose to hide a few elements with `displ
 
 #### Unhiding elements
 
-To_unhide_ any of the elements that are hidden via the CSS Editor, you can find the relevant code in the CSS Editor and delete it. 
+To _unhide_ any of the elements that are hidden via the CSS Editor, you can find the relevant code in the CSS Editor and delete it. 
 
 Deleting the following code from the CSS Editor, for example, will make Resource Class show up as a sorting option site-wide:
 
@@ -170,22 +170,21 @@ form.sorting option[value="created"]{
 
 #### Hiding/unhiding sort options
 
-As of January 2026, "Created" (which refers to the date the Omeka S item was created) and "Resource Class" are hidden from the Sort By dropdowns site-wide. The following code in the CSS Editor is what hides them from the dropdown menu:
+Sort options are shown or hidden via the Faceted Browse settings, with the exception of two (as of March 2026): "Created" (which refers to the date the Omeka S item was created) and "Resource Class."
+
+Using CSS, "Created" and "Resource Class" are hidden from the Sort By dropdowns _for some browsers_. **Only some browsers support the use of CSS to style/hide options inside a dropdown element.** The following code in the CSS Editor is what hides them from the dropdown menu in browsers that support this functionality:
 
 ```
 /* Hide "Created" from sort options */
-form.sorting option[value="created"]{
+form.sorting select:first-of-type option[value="created"]{
   display: none;
 }
 
 /* Hide "Resource Class" from sort options */
-form.sorting option[value="resource_class_label"]{
+form.sorting select:first-of-type option[value="resource_class_label"]{
   display: none;
 }
 ```
-
-As of January 2026, those are the only two Sort options that could **_not_** be hidden via the Faceted Browse settings. To hide options in the future, edit the Faceted Browse itself; then, for the relevant Column, check the box for "Exclude sort by."
-
 
 #### Hiding/unhiding metadata in Faceted Browse results
 
@@ -213,51 +212,97 @@ The Omeka S Page editor allows you to apply CSS classes in its block layout UI. 
 
 Every page must have a Heading 1 (`<h1>`) to meet ADA Title II requirements. When editing pages, this is most easily accomplished with the **Page title block**, which displays the page title as an `<h1>`. When you create a page, it should already be added as a block.
 
-
 ### Links with background images
 
 As on the previous site, the Browse page has large rectangular links that go to various "browse by"-type pages (browse by decade, browse by season, etc.). This theme provides a custom Asset block template, "Links with background images," to make it easier to add and edit these kinds of designs.
 
-![Links with background images on Browse page](https://github.com/CDRH/theme_nebraskaland/blob/main/docs/browse-image-links.png)
+![Links with background images Asset block](https://github.com/CDRH/theme_nebraskaland/blob/main/docs/link-image-block.png)
+
+#### Add a "Links with background images" block
 
 To set up a block that uses this template:
 
-1. Edit the page
-2. Add a new "Asset" block
-3. Click the gears icon in the top right of the Asset block
-4. Under "Template", choose "Links with background images"
-5. Click "Apply changes"
+1. Edit the page.
+2. Add a new "Asset" block.
+3. Click the gears icon in the top right of the Asset block.
+4. Under "Template", choose "Links with background images."
+5. Click "Apply changes."
+6. Save the page.
 
-![Screenshot of Asset block setup for links with background images](https://github.com/CDRH/theme_nebraskaland/blob/main/docs/browse-image-links-setup.png)
+![Asset block setup for links with background images](https://github.com/CDRH/theme_nebraskaland/blob/main/docs/link-image-setup.png)
 
+#### Add a new link/image to a "Links background images" block
 
 To add a new link to the block:
 
-1. In the already-added Asset block, click "Add asset," then upload an image or select an image from the list
-2. Under "Page link," select a page to link to
-3. If you want the link text to be different than the page it links to, enter the custom text under "Alternative link title"
-4. Click "Apply changes"
-5. Save the page
+1. In the already-added Asset block, click "Add asset," then upload an image or select an image from the list.
+2. Under "Page link," select a page to link to. **If you forget to select a Page link, the image will not display correctly.**
+3. If you want the link text to be different than the page it links to, enter the custom text under "Alternative link title."
+4. Click "Apply changes."
+5. Save the page.
+
+#### Edit a link/image in a "Links background images" block
 
 To edit an existing link:
-1. In the already-added Asset block, find the link/image you want to change
-2. Click the wrench icon to the right of the link/image
-3. Make your changes to the image asset or the page link
-4. Save the page
 
-By default, the first link in each block will be on its own line. All links after that will be two-per-line.
+1. In the already-added Asset block, find the link/image you want to change.
+2. Click the wrench icon to the right of the link/image.
+3. Make your changes to the image asset or the page link.
+4. Click "Apply changes."
+5. Save the page.
+
+#### Remove a link/image from a "Links with background images" block
+
+1. In the Asset block, click the trash can icon to the right of the image.
+2. Save the page.
+
+#### Center the first link/image on its own line
+
+![Links with background images Asset block with first image centered](https://github.com/CDRH/theme_nebraskaland/blob/main/docs/center-first-link-image.png)
+
+To put the first link on its own line and center it, add a class (`center-first`) to the Asset block. All links after that will be two-per-line, except on mobile devices or narrow browser widths.
+
+1. In the Asset block, click the gears icon in the top right of the Asset block.
+2. Under "Class," type in `center first`.
+4. Click "Apply changes."
+5. Save the page.
+
+If the first link/image is already centered, you can un-center it by removing the `center-first` class from the Asset block.
+
+#### Troubleshooting: links are small and displayed incorrectly
+
+If the links appear small, you can barely see the background image, and you can't click on them, 
+this means that you forgot to select a Page link. To fix this:
+
+1. In the Asset block, find the link/image that isn't displaying correctly.
+2. Click the wrench icon to the right of the link/image.
+3. Under "Page link," select a page to link to.
+4. Click "Apply changes."
+5. Save the page.
 
 ### Homepage Images block (randomized)
 
 A custom block template has been created for the Nebraskaland Omeka S theme in order to display a random background image on the homepage (as the previous site did) with an overlaid text box. This custom design is not a type of Page Block, but rather a selectable template for the [Asset](https://omeka.org/s/docs/user-manual/sites/site_pages/#asset) block type. 
 
+![Homepage Images block (randomized)](https://github.com/CDRH/theme_nebraskaland/blob/main/docs/homepage-image-block.png)
+
 When editing the Home page, you'll see a block called Asset that lists each of the currently selected images with a thumbnail and the file name. This is where the custom design is configured. Each time the home page is loaded, Omeka S randomly selects one of the listed images to display. The image's caption is displayed in a transparent rectangle that overlays the image.
+
+![Homepage Images block setup](https://github.com/CDRH/theme_nebraskaland/blob/main/docs/homepage-image-setup.png)
 
 #### Edit homepage text
 
-Each homepage image must be set up with its own caption. To display the same homepage text all the time (no matter which image is displayed), just put the same HTML/text in the Caption box for each image/asset. As of November 2025, all 5 homepage images have the same exact caption text.
+Each homepage image must be set up with its own caption. To display the same homepage text all the time (no matter which image is displayed), just put the same HTML/text in the Caption box for each image/asset.
 
-To edit the text on the homepage, edit the image's caption: click the wrench icon to the right of the image to open the configuration options. In the box labeled Caption, you can edit the existing HTML. Paragraph styling (e.g. centered text) and links are added to the caption using HTML, so if you are not familiar with HTML paragraph or link tags, use caution when editing and change only the text you need to.
+To edit the text on the homepage, edit the image's caption:
+
+1. Edit the page 
+2. In the Asset block, click the wrench icon to the right of the image to open the configuration options.
+3. In the box labeled Caption, add, edit, or delete the existing HTML. Paragraph styling (e.g. centered text) and links are added to the caption using HTML, so if you are not familiar with HTML paragraph or link tags, use caution when editing and change only the text you need to.
+4. Click "Apply changes."
+5. Save the page.
+
+![Homepage Images block text setup](https://github.com/CDRH/theme_nebraskaland/blob/main/docs/homepage-image-setup-2.png)
 
 #### Add a new homepage image
 
@@ -279,8 +324,9 @@ To edit the text on the homepage, edit the image's caption: click the wrench ico
 #### Remove a homepage image
 
 1. In the Asset block, click the trash can icon to the right of the image.
+2. Save the page.
 
-#### Adding a new homepage image block from scratch
+#### Add a new homepage image block from scratch
 
 If the home page needs to be re-created, or if you wish to use the same block template on a different page:
 
@@ -290,109 +336,17 @@ If the home page needs to be re-created, or if you wish to use the same block te
 4. In the Block layout configuration, click the Template dropdown menu and select Full size image with caption overlay.
 5. Click Apply changes.
 6. Follow the instructions above to add images and text.
-7. If, on the published page, there is a white line showing up at the bottom of the block, change page layout's row gap from 10px to 0px:<br />
+
+#### Troubleshooting: unwanted gap below homepage image
+
+If there is a white line showing up at the bottom of the block, do one of the following: 
+
+1. Change the page layout to "Normal flow" (as opposed to "Grid") and save the page.
+2. If you need to use the "Grid" page layout, change the page layout's row gap from 10px to 0px:<br />
   a. Edit the page.<br />
-  b. Above the blocks, in the same row as the Layout dropdown, click the settings icon (3 gears) to open the Page layout configuration options.<br />
+  b. Above the blocks, in the same row as the Page layout selection dropdown, click the settings icon (3 gears) to open the Page layout configuration options.<br />
   c. In the Page layout configuration options, change Row gap (px) to 0px. 
-
-## Module settings
-
-### Faceted Browse
-
-As of November 2025, the `/browse` page has been set up using the following options. To (re)create the exact same Faceted Browse page, go to Sites > Nebraskaland Digital Archive > Faceted Browse.
-
-- Title: Browse Issues
-- Resource type: Items (selected by default)
-- Categories: Browse Issues By (click add/edit)
-  - Name:  Browse Issues By
-  - Search query (click Edit)
-    - Under Search by item set, add two queries:
-      - In: Current live issues
-      - In: To Review
-  - Default sort by: Date Issued
-  - Default sort order: Ascending
-  - Helper text: Search the full text of all digitized issues in the archive. Or select keywords to narrow down issue results. Only issues that fulfill all of the chosen keywords will appear in the results.
-  - Helper text button label: [blank]
-  - Value facet mode: Match all
-  - Facets:
-    - Full-text Search
-    - Decade
-      - Facet type: Value
-      - Facet name: Decade
-      - Property: Name of temporal position
-      - Select type: Single (dropdown menu)
-      - Query type: Contains
-      - Query type: Contains
-      - Values: See note about the "Values" text box for facets
-    - Year
-      - Facet type: Value
-      - Facet name: Year
-      - Property: Date
-      - Select type: Single (dropdown menu)
-      - Query type: Contains
-      - Values: See note about the "Values" text box for facets
-    - Season
-      - Facet type: Value
-      - Facet name: Season
-      - Property: Temporal Coverage
-      - Select type: Single (list)
-      - Query type: Contains
-      - Truncate values: [blank]
-      - Values: See note about the "Values" text box for facets
-    - Volume #
-      - Facet type: Value
-      - Facet name: Volume #
-      - Property: volume
-      - Select type: Single (dropdown menu)
-      - Query type: Is exactly
-      - Values: See note about the "Values" text box for facets
-  - Unique Issues
-      - Facet type: Value
-      - Facet name: Unique Issues
-      - Property: edition
-      - Select type: Multiple (list)
-      - Query type: Contains
-      - Truncate values: [blank]
-      - Values: See note about the "Values" text box for facets
-  - Media Format
-      - Facet type: Value
-      - Facet name: Media Format
-      - Property: Type
-      - Select type: Multiple (list)
-      - Query type: Contains
-      - Truncate values: 5
-      - Values: See note about the "Values" text box for facets
-  - Columns:
-      - Title
-        - Column type: Title (link to resource)
-        - Column name: Title
-        - Exclude sort by: [unchecked]
-      - Edition
-        - Column type: Value
-        - Column name: Edition
-        - Exclude sort by: [unchecked]
-        - Property: Dublin Core: Date
-        - Max values: 1
-      - Date Issued
-        - Column type: Value
-        - Column name: Date Issued
-        - Exclude sort by: [unchecked]
-        - Property: Dublin Core: Date Issued
-        - Max values: 1
-   
-  **Note about the "Values" text box for facets**: the list of values in this box can be quickly (re)populated by checking the box for "Show all available values," but the resulting list will often have to be re-alphabetized/put in chronological order manually. To add a new value without repopulating the list, simply add a new line of text and save your changes.
-
-### OctopusViewer Settings
-
-As of November 2025, the PDF viewer is set up using the following options. To edit these, go to Modules, find OctopusViewer in the list, and click the Configure button.
-
-- Show viewer on the item page: Before the item content
-- Show viewer on the media page: Before the media content
-- IIIF Image URI template: (blank)
-- Show media selector: Never
-- Show media info: Never
-- Default media title: No text
-- Show download link: No
+  d. Save the page.
 
 ## Links and References
 
