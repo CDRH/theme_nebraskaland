@@ -263,7 +263,7 @@ To edit an existing link:
 To put the first link on its own line and center it, add a class (`center-first`) to the Asset block. All links after that will be two-per-line, except on mobile devices or narrow browser widths.
 
 1. In the Asset block, click the gears icon in the top right of the Asset block.
-2. Under "Class," type in `center first`.
+2. Under "Class," type in `center-first`.
 4. Click "Apply changes."
 5. Save the page.
 
