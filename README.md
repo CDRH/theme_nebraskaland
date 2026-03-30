@@ -213,12 +213,11 @@ The Omeka S Page editor allows you to apply CSS classes in its block layout UI. 
 
 Every page must have a Heading 1 (`<h1>`) to meet ADA Title II requirements. When editing pages, this is most easily accomplished with the **Page title block**, which displays the page title as an `<h1>`. When you create a page, it should already be added as a block.
 
-
 ### Links with background images
 
 As on the previous site, the Browse page has large rectangular links that go to various "browse by"-type pages (browse by decade, browse by season, etc.). This theme provides a custom Asset block template, "Links with background images," to make it easier to add and edit these kinds of designs.
 
-![Links with background images on Browse page](https://github.com/CDRH/theme_nebraskaland/blob/main/docs/browse-image-links.png)
+![Links with background images Asset block](https://github.com/CDRH/theme_nebraskaland/blob/main/docs/center-first-image-link.png)
 
 #### Add a "Links with background images" block
 
@@ -231,7 +230,7 @@ To set up a block that uses this template:
 5. Click "Apply changes."
 6. Save the page.
 
-![Screenshot of Asset block setup for links with background images](https://github.com/CDRH/theme_nebraskaland/blob/main/docs/browse-image-links-setup.png)
+![Screenshot of Asset block setup for links with background images](https://github.com/CDRH/theme_nebraskaland/blob/main/docs/link-image-setup.png)
 
 #### Add a new link/image to a "Links background images" block
 
@@ -242,7 +241,6 @@ To add a new link to the block:
 3. If you want the link text to be different than the page it links to, enter the custom text under "Alternative link title."
 4. Click "Apply changes."
 5. Save the page.
-
 
 #### Edit a link/image in a "Links background images" block
 
@@ -259,6 +257,8 @@ To edit an existing link:
 2. Save the page.
 
 #### Center the first link/image on its own line
+
+![Links with background images Asset block with first image centered](https://github.com/CDRH/theme_nebraskaland/blob/main/docs/center-first-image-link.png)
 
 To put the first link on its own line and center it, add a class (`center-first`) to the Asset block. All links after that will be two-per-line, except on mobile devices or narrow browser widths.
 
